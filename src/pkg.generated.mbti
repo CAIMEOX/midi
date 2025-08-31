@@ -1,0 +1,51 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "CAIMEOX/midi"
+
+// Values
+fn parse(Bytes) -> MidiFile raise ParseError
+
+fn serialize(MidiFile) -> Bytes
+
+// Errors
+pub suberror ParseError {
+  InvalidHeader
+  InvalidTrack
+  UnexpectedEOF
+  UnknownEventType
+  InvalidData(String)
+}
+
+// Types and methods
+pub(all) enum Event {
+  NoteOn(delta~ : UInt, channel~ : Byte, note~ : Byte, velocity~ : Byte)
+  NoteOff(delta~ : UInt, channel~ : Byte, note~ : Byte, velocity~ : Byte)
+  ControlChange(delta~ : UInt, channel~ : Byte, controller~ : Byte, value~ : Byte)
+  ProgramChange(delta~ : UInt, channel~ : Byte, program~ : Byte)
+  Aftertouch(delta~ : UInt, channel~ : Byte, value~ : Byte)
+  PolyTouch(delta~ : UInt, channel~ : Byte, note~ : Byte, value~ : Byte)
+  PitchWheel(delta~ : UInt, channel~ : Byte, pitch~ : Int)
+  Meta(delta~ : UInt, meta_type~ : Byte, data~ : Array[Byte])
+  SysEx(delta~ : UInt, data~ : Array[Byte])
+  Clock(delta~ : UInt)
+  Start(delta~ : UInt)
+  Continue(delta~ : UInt)
+  Stop(delta~ : UInt)
+  ActiveSensing(delta~ : UInt)
+  Reset(delta~ : UInt)
+}
+
+pub(all) struct MidiFile {
+  format : UInt16
+  division : UInt16
+  tracks : Array[Track]
+}
+impl Show for MidiFile
+
+pub(all) struct Track {
+  events : Array[Event]
+}
+
+// Type aliases
+
+// Traits
+
