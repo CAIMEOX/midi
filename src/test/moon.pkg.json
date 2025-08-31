@@ -1,0 +1,12 @@
+{
+    "pre-build": [
+        // {
+        //     "input": "star-wars.mid",
+        //     "output": "star-wars.mbt",
+        //     "command": ":embed -i $input -o $output --binary"
+        // }
+    ],
+    "test-import": [
+        "CAIMEOX/midi"
+    ]
+}

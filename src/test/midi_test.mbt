@@ -1,0 +1,1672 @@
+///|
+test "star wars" {
+  let data = @midi.parse(resource)
+  inspect(
+    data,
+    content=(
+      #|format=1
+      #|division=384
+      #|tracks:10
+      #|Meta[0] type=88 len=4 [3 2 24 8]
+      #|Meta[0] type=81 len=3 [7 83 0]
+      #|Meta[1152] type=88 len=4 [4 2 24 8]
+      #|Meta[19968] type=47 len=0 []
+      #|------
+      #|Meta[0] type=3 len=10 [70 73 78 71 69 82 68 66 65 83]
+      #|ControlChange[424][ch 1] ctrl=121 val=0
+      #|ControlChange[0][ch 1] ctrl=0 val=0
+      #|ControlChange[0][ch 1] ctrl=32 val=0
+      #|ProgramChange[0][ch 1] program=33
+      #|ControlChange[0][ch 1] ctrl=7 val=100
+      #|ControlChange[0][ch 1] ctrl=10 val=64
+      #|ControlChange[0][ch 1] ctrl=91 val=0
+      #|ControlChange[0][ch 1] ctrl=93 val=0
+      #|NoteOn[12968][ch 1] note=53 vel=122
+      #|NoteOff[292][ch 1] note=53 vel=64
+      #|NoteOn[92][ch 1] note=53 vel=103
+      #|NoteOff[52][ch 1] note=53 vel=64
+      #|NoteOn[76][ch 1] note=53 vel=97
+      #|NoteOff[56][ch 1] note=53 vel=64
+      #|NoteOn[72][ch 1] note=53 vel=97
+      #|NoteOff[56][ch 1] note=53 vel=64
+      #|NoteOn[72][ch 1] note=53 vel=122
+      #|NoteOff[304][ch 1] note=53 vel=64
+      #|NoteOn[80][ch 1] note=53 vel=109
+      #|NoteOff[52][ch 1] note=53 vel=64
+      #|NoteOn[76][ch 1] note=53 vel=97
+      #|NoteOff[44][ch 1] note=53 vel=64
+      #|NoteOn[84][ch 1] note=53 vel=113
+      #|NoteOff[48][ch 1] note=53 vel=64
+      #|NoteOn[84][ch 1] note=53 vel=117
+      #|NoteOff[312][ch 1] note=53 vel=64
+      #|NoteOn[68][ch 1] note=53 vel=97
+      #|NoteOff[48][ch 1] note=53 vel=64
+      #|NoteOn[80][ch 1] note=53 vel=97
+      #|NoteOff[48][ch 1] note=53 vel=64
+      #|NoteOn[80][ch 1] note=53 vel=103
+      #|NoteOff[44][ch 1] note=53 vel=64
+      #|NoteOn[84][ch 1] note=53 vel=106
+      #|NoteOff[48][ch 1] note=53 vel=64
+      #|NoteOn[80][ch 1] note=53 vel=103
+      #|NoteOff[40][ch 1] note=53 vel=64
+      #|NoteOn[88][ch 1] note=53 vel=106
+      #|NoteOff[56][ch 1] note=53 vel=64
+      #|NoteOn[72][ch 1] note=53 vel=109
+      #|NoteOff[52][ch 1] note=53 vel=64
+      #|NoteOn[76][ch 1] note=53 vel=109
+      #|NoteOff[44][ch 1] note=53 vel=64
+      #|NoteOn[84][ch 1] note=53 vel=109
+      #|NoteOff[52][ch 1] note=53 vel=64
+      #|NoteOn[80][ch 1] note=53 vel=122
+      #|NoteOff[304][ch 1] note=53 vel=64
+      #|NoteOn[76][ch 1] note=53 vel=109
+      #|NoteOff[48][ch 1] note=53 vel=64
+      #|NoteOn[80][ch 1] note=53 vel=100
+      #|NoteOff[40][ch 1] note=53 vel=64
+      #|NoteOn[88][ch 1] note=53 vel=109
+      #|NoteOff[48][ch 1] note=53 vel=64
+      #|NoteOn[80][ch 1] note=53 vel=117
+      #|NoteOff[296][ch 1] note=53 vel=64
+      #|NoteOn[88][ch 1] note=53 vel=92
+      #|NoteOff[44][ch 1] note=53 vel=64
+      #|NoteOn[84][ch 1] note=53 vel=106
+      #|NoteOff[44][ch 1] note=53 vel=64
+      #|NoteOn[84][ch 1] note=53 vel=109
+      #|NoteOff[52][ch 1] note=53 vel=64
+      #|NoteOn[80][ch 1] note=53 vel=126
+      #|NoteOff[104][ch 1] note=53 vel=64
+      #|Meta[3012] type=47 len=0 []
+      #|------
+      #|Meta[0] type=3 len=7 [66 82 65 83 83 32 49]
+      #|ControlChange[444][ch 2] ctrl=121 val=0
+      #|ControlChange[0][ch 2] ctrl=0 val=0
+      #|ControlChange[0][ch 2] ctrl=32 val=0
+      #|ProgramChange[0][ch 2] program=61
+      #|ControlChange[0][ch 2] ctrl=7 val=100
+      #|ControlChange[0][ch 2] ctrl=10 val=60
+      #|ControlChange[0][ch 2] ctrl=91 val=127
+      #|ControlChange[0][ch 2] ctrl=93 val=0
+      #|NoteOn[708][ch 2] note=72 vel=106
+      #|NoteOff[28][ch 2] note=72 vel=64
+      #|NoteOn[52][ch 2] note=67 vel=86
+      #|NoteOff[48][ch 2] note=67 vel=64
+      #|NoteOn[80][ch 2] note=72 vel=92
+      #|NoteOff[72][ch 2] note=72 vel=64
+      #|NoteOn[56][ch 2] note=74 vel=95
+      #|NoteOff[68][ch 2] note=74 vel=64
+      #|NoteOn[60][ch 2] note=72 vel=90
+      #|NoteOff[64][ch 2] note=72 vel=64
+      #|NoteOn[64][ch 2] note=79 vel=100
+      #|NoteOff[940][ch 2] note=79 vel=64
+      #|NoteOn[84][ch 2] note=77 vel=74
+      #|NoteOff[40][ch 2] note=77 vel=64
+      #|NoteOn[88][ch 2] note=79 vel=79
+      #|NoteOff[48][ch 2] note=79 vel=64
+      #|NoteOn[80][ch 2] note=84 vel=113
+      #|NoteOff[320][ch 2] note=84 vel=64
+      #|NoteOn[64][ch 2] note=82 vel=118
+      #|NoteOff[76][ch 2] note=82 vel=64
+      #|NoteOn[52][ch 2] note=81 vel=92
+      #|NoteOff[64][ch 2] note=81 vel=64
+      #|NoteOn[64][ch 2] note=79 vel=90
+      #|NoteOff[64][ch 2] note=79 vel=64
+      #|NoteOn[64][ch 2] note=81 vel=106
+      #|NoteOff[68][ch 2] note=81 vel=64
+      #|NoteOn[60][ch 2] note=77 vel=77
+      #|NoteOff[64][ch 2] note=77 vel=64
+      #|NoteOn[64][ch 2] note=79 vel=106
+      #|NoteOn[1024][ch 2] note=67 vel=80
+      #|NoteOff[4][ch 2] note=79 vel=64
+      #|NoteOff[64][ch 2] note=67 vel=64
+      #|NoteOn[60][ch 2] note=72 vel=92
+      #|NoteOff[56][ch 2] note=72 vel=64
+      #|NoteOn[72][ch 2] note=77 vel=106
+      #|NoteOff[64][ch 2] note=77 vel=64
+      #|NoteOn[64][ch 2] note=72 vel=86
+      #|NoteOff[56][ch 2] note=72 vel=64
+      #|NoteOn[72][ch 2] note=79 vel=113
+      #|NoteOn[256][ch 2] note=72 vel=63
+      #|NoteOff[4][ch 2] note=79 vel=64
+      #|NoteOff[52][ch 2] note=72 vel=64
+      #|NoteOn[72][ch 2] note=77 vel=84
+      #|NoteOff[64][ch 2] note=77 vel=64
+      #|NoteOn[64][ch 2] note=81 vel=122
+      #|NoteOff[80][ch 2] note=81 vel=64
+      #|NoteOn[48][ch 2] note=72 vel=76
+      #|NoteOff[52][ch 2] note=72 vel=64
+      #|NoteOn[80][ch 2] note=77 vel=103
+      #|NoteOff[92][ch 2] note=77 vel=64
+      #|NoteOn[40][ch 2] note=79 vel=113
+      #|NoteOff[336][ch 2] note=79 vel=64
+      #|NoteOn[44][ch 2] note=67 vel=117
+      #|NoteOn[0][ch 2] note=79 vel=113
+      #|NoteOff[40][ch 2] note=79 vel=64
+      #|NoteOff[32][ch 2] note=67 vel=64
+      #|NoteOn[56][ch 2] note=79 vel=109
+      #|NoteOn[0][ch 2] note=67 vel=106
+      #|NoteOff[48][ch 2] note=67 vel=64
+      #|NoteOff[8][ch 2] note=79 vel=64
+      #|NoteOn[72][ch 2] note=79 vel=127
+      #|NoteOn[0][ch 2] note=67 vel=122
+      #|NoteOff[96][ch 2] note=67 vel=64
+      #|NoteOff[4][ch 2] note=79 vel=64
+      #|NoteOn[32][ch 2] note=60 vel=103
+      #|NoteOn[4][ch 2] note=72 vel=122
+      #|NoteOff[296][ch 2] note=72 vel=64
+      #|NoteOff[12][ch 2] note=60 vel=64
+      #|NoteOn[64][ch 2] note=60 vel=103
+      #|NoteOn[0][ch 2] note=72 vel=122
+      #|NoteOff[80][ch 2] note=60 vel=64
+      #|NoteOff[20][ch 2] note=72 vel=64
+      #|NoteOn[188][ch 2] note=60 vel=113
+      #|NoteOn[0][ch 2] note=72 vel=106
+      #|NoteOff[76][ch 2] note=72 vel=64
+      #|NoteOff[20][ch 2] note=60 vel=64
+      #|NoteOn[0][ch 2] note=79 vel=126
+      #|NoteOn[0][ch 2] note=67 vel=122
+      #|NoteOff[500][ch 2] note=67 vel=64
+      #|NoteOff[28][ch 2] note=79 vel=64
+      #|NoteOn[48][ch 2] note=65 vel=86
+      #|NoteOn[0][ch 2] note=77 vel=100
+      #|NoteOff[68][ch 2] note=77 vel=64
+      #|NoteOff[28][ch 2] note=65 vel=64
+      #|NoteOn[0][ch 2] note=67 vel=106
+      #|NoteOn[0][ch 2] note=79 vel=106
+      #|NoteOff[80][ch 2] note=79 vel=64
+      #|NoteOn[20][ch 2] note=69 vel=109
+      #|NoteOn[0][ch 2] note=81 vel=122
+      #|NoteOff[8][ch 2] note=67 vel=64
+      #|NoteOff[100][ch 2] note=81 vel=64
+      #|NoteOff[0][ch 2] note=69 vel=64
+      #|NoteOn[144][ch 2] note=77 vel=106
+      #|NoteOn[0][ch 2] note=65 vel=113
+      #|NoteOff[56][ch 2] note=77 vel=64
+      #|NoteOff[36][ch 2] note=65 vel=64
+      #|NoteOn[40][ch 2] note=67 vel=117
+      #|NoteOn[0][ch 2] note=79 vel=113
+      #|NoteOff[660][ch 2] note=79 vel=64
+      #|NoteOff[4][ch 2] note=67 vel=64
+      #|NoteOn[104][ch 2] note=79 vel=117
+      #|NoteOn[0][ch 2] note=67 vel=113
+      #|NoteOff[72][ch 2] note=67 vel=64
+      #|NoteOff[8][ch 2] note=79 vel=64
+      #|NoteOn[172][ch 2] note=67 vel=100
+      #|NoteOn[0][ch 2] note=79 vel=103
+      #|NoteOff[68][ch 2] note=79 vel=64
+      #|NoteOff[16][ch 2] note=67 vel=64
+      #|NoteOn[44][ch 2] note=70 vel=112
+      #|NoteOn[0][ch 2] note=79 vel=109
+      #|NoteOn[4][ch 2] note=75 vel=90
+      #|NoteOn[0][ch 2] note=82 vel=86
+      #|NoteOff[712][ch 2] note=82 vel=64
+      #|NoteOff[4][ch 2] note=75 vel=64
+      #|NoteOff[20][ch 2] note=79 vel=64
+      #|NoteOff[8][ch 2] note=70 vel=64
+      #|NoteOn[20][ch 2] note=67 vel=103
+      #|NoteOn[0][ch 2] note=79 vel=106
+      #|NoteOn[4][ch 2] note=76 vel=103
+      #|NoteOn[0][ch 2] note=72 vel=95
+      #|NoteOff[168][ch 2] note=76 vel=64
+      #|NoteOff[0][ch 2] note=79 vel=64
+      #|NoteOff[4][ch 2] note=72 vel=64
+      #|NoteOff[4][ch 2] note=67 vel=64
+      #|NoteOn[204][ch 2] note=67 vel=109
+      #|NoteOn[0][ch 2] note=79 vel=106
+      #|NoteOn[0][ch 2] note=76 vel=100
+      #|NoteOn[0][ch 2] note=72 vel=97
+      #|NoteOff[64][ch 2] note=72 vel=64
+      #|NoteOff[0][ch 2] note=76 vel=64
+      #|NoteOff[12][ch 2] note=79 vel=64
+      #|NoteOff[8][ch 2] note=67 vel=64
+      #|NoteOn[172][ch 2] note=67 vel=106
+      #|NoteOn[0][ch 2] note=72 vel=90
+      #|NoteOn[0][ch 2] note=76 vel=95
+      #|NoteOn[0][ch 2] note=79 vel=95
+      #|NoteOff[52][ch 2] note=79 vel=64
+      #|NoteOff[0][ch 2] note=76 vel=64
+      #|NoteOff[0][ch 2] note=72 vel=64
+      #|NoteOff[40][ch 2] note=67 vel=64
+      #|NoteOn[40][ch 2] note=70 vel=126
+      #|NoteOn[4][ch 2] note=79 vel=100
+      #|NoteOn[0][ch 2] note=75 vel=86
+      #|NoteOn[0][ch 2] note=82 vel=95
+      #|NoteOff[72][ch 2] note=82 vel=64
+      #|NoteOff[16][ch 2] note=75 vel=64
+      #|NoteOff[0][ch 2] note=70 vel=64
+      #|NoteOff[4][ch 2] note=79 vel=64
+      #|NoteOn[160][ch 2] note=82 vel=83
+      #|NoteOn[0][ch 2] note=70 vel=126
+      #|NoteOn[0][ch 2] note=75 vel=83
+      #|NoteOn[4][ch 2] note=79 vel=82
+      #|NoteOff[28][ch 2] note=75 vel=64
+      #|NoteOff[16][ch 2] note=82 vel=64
+      #|NoteOff[4][ch 2] note=79 vel=64
+      #|NoteOff[16][ch 2] note=70 vel=64
+      #|NoteOn[60][ch 2] note=81 vel=92
+      #|NoteOn[4][ch 2] note=72 vel=106
+      #|NoteOn[0][ch 2] note=77 vel=95
+      #|NoteOn[0][ch 2] note=84 vel=97
+      #|NoteOff[1132][ch 2] note=84 vel=64
+      #|NoteOn[16][ch 2] note=53 vel=113
+      #|NoteOff[4][ch 2] note=72 vel=64
+      #|NoteOff[0][ch 2] note=81 vel=64
+      #|NoteOff[4][ch 2] note=77 vel=64
+      #|NoteOff[292][ch 2] note=53 vel=64
+      #|NoteOn[84][ch 2] note=53 vel=97
+      #|NoteOff[60][ch 2] note=53 vel=64
+      #|NoteOn[68][ch 2] note=53 vel=100
+      #|NoteOff[44][ch 2] note=53 vel=64
+      #|NoteOn[84][ch 2] note=53 vel=117
+      #|NoteOff[60][ch 2] note=53 vel=64
+      #|NoteOn[68][ch 2] note=58 vel=118
+      #|NoteOff[292][ch 2] note=58 vel=64
+      #|NoteOn[92][ch 2] note=58 vel=106
+      #|NoteOff[52][ch 2] note=58 vel=64
+      #|NoteOn[76][ch 2] note=58 vel=112
+      #|NoteOff[40][ch 2] note=58 vel=64
+      #|NoteOn[88][ch 2] note=58 vel=118
+      #|NoteOff[48][ch 2] note=58 vel=64
+      #|NoteOn[88][ch 2] note=60 vel=113
+      #|NoteOff[344][ch 2] note=60 vel=64
+      #|NoteOn[32][ch 2] note=63 vel=106
+      #|NoteOff[40][ch 2] note=63 vel=64
+      #|NoteOn[88][ch 2] note=63 vel=106
+      #|NoteOff[44][ch 2] note=63 vel=64
+      #|NoteOn[84][ch 2] note=63 vel=118
+      #|NoteOff[52][ch 2] note=63 vel=64
+      #|NoteOn[76][ch 2] note=68 vel=112
+      #|NoteOff[72][ch 2] note=68 vel=64
+      #|NoteOn[56][ch 2] note=68 vel=100
+      #|NoteOff[48][ch 2] note=68 vel=64
+      #|NoteOn[84][ch 2] note=68 vel=106
+      #|NoteOff[60][ch 2] note=68 vel=64
+      #|NoteOn[68][ch 2] note=75 vel=106
+      #|NoteOff[56][ch 2] note=75 vel=64
+      #|NoteOn[72][ch 2] note=75 vel=95
+      #|NoteOff[28][ch 2] note=75 vel=64
+      #|NoteOn[100][ch 2] note=75 vel=106
+      #|NoteOff[60][ch 2] note=75 vel=64
+      #|NoteOn[72][ch 2] note=77 vel=92
+      #|NoteOn[0][ch 2] note=65 vel=77
+      #|NoteOff[312][ch 2] note=65 vel=64
+      #|NoteOff[0][ch 2] note=77 vel=64
+      #|NoteOn[68][ch 2] note=65 vel=77
+      #|NoteOn[0][ch 2] note=77 vel=84
+      #|NoteOff[44][ch 2] note=65 vel=64
+      #|NoteOff[12][ch 2] note=77 vel=64
+      #|NoteOn[68][ch 2] note=65 vel=77
+      #|NoteOn[4][ch 2] note=77 vel=84
+      #|NoteOff[40][ch 2] note=77 vel=64
+      #|NoteOff[0][ch 2] note=65 vel=64
+      #|NoteOn[88][ch 2] note=65 vel=84
+      #|NoteOn[0][ch 2] note=77 vel=95
+      #|NoteOff[60][ch 2] note=77 vel=64
+      #|NoteOff[12][ch 2] note=65 vel=64
+      #|NoteOn[56][ch 2] note=70 vel=106
+      #|NoteOn[0][ch 2] note=82 vel=90
+      #|NoteOff[320][ch 2] note=82 vel=64
+      #|NoteOff[0][ch 2] note=70 vel=64
+      #|NoteOn[68][ch 2] note=75 vel=73
+      #|NoteOn[0][ch 2] note=87 vel=100
+      #|NoteOff[40][ch 2] note=75 vel=64
+      #|NoteOff[8][ch 2] note=87 vel=64
+      #|NoteOn[76][ch 2] note=75 vel=77
+      #|NoteOn[0][ch 2] note=87 vel=86
+      #|NoteOff[40][ch 2] note=87 vel=64
+      #|NoteOff[4][ch 2] note=75 vel=64
+      #|NoteOn[84][ch 2] note=75 vel=95
+      #|NoteOn[0][ch 2] note=87 vel=106
+      #|NoteOff[60][ch 2] note=87 vel=64
+      #|NoteOff[40][ch 2] note=75 vel=64
+      #|NoteOn[32][ch 2] note=77 vel=103
+      #|NoteOn[4][ch 2] note=89 vel=113
+      #|NoteOff[132][ch 2] note=89 vel=64
+      #|NoteOff[8][ch 2] note=77 vel=64
+      #|Meta[2964] type=47 len=0 []
+      #|------
+      #|Meta[0] type=3 len=7 [70 82 46 72 79 82 78]
+      #|ControlChange[464][ch 3] ctrl=121 val=0
+      #|ControlChange[0][ch 3] ctrl=0 val=0
+      #|ControlChange[0][ch 3] ctrl=32 val=0
+      #|ProgramChange[0][ch 3] program=60
+      #|ControlChange[0][ch 3] ctrl=7 val=100
+      #|ControlChange[0][ch 3] ctrl=10 val=64
+      #|ControlChange[0][ch 3] ctrl=91 val=127
+      #|ControlChange[0][ch 3] ctrl=93 val=0
+      #|NoteOn[768][ch 3] note=60 vel=90
+      #|NoteOff[56][ch 3] note=60 vel=64
+      #|NoteOn[72][ch 3] note=65 vel=109
+      #|NoteOff[72][ch 3] note=65 vel=64
+      #|NoteOn[56][ch 3] note=67 vel=126
+      #|NoteOff[108][ch 3] note=67 vel=64
+      #|NoteOn[20][ch 3] note=65 vel=97
+      #|NoteOff[64][ch 3] note=65 vel=64
+      #|NoteOn[64][ch 3] note=67 vel=126
+      #|NoteOff[256][ch 3] note=67 vel=64
+      #|NoteOn[0][ch 3] note=65 vel=82
+      #|NoteOff[64][ch 3] note=65 vel=64
+      #|NoteOn[64][ch 3] note=67 vel=103
+      #|NoteOff[64][ch 3] note=67 vel=64
+      #|NoteOn[64][ch 3] note=72 vel=117
+      #|NoteOff[228][ch 3] note=72 vel=64
+      #|NoteOn[28][ch 3] note=70 vel=127
+      #|NoteOff[196][ch 3] note=70 vel=64
+      #|NoteOn[60][ch 3] note=69 vel=117
+      #|NoteOff[72][ch 3] note=69 vel=64
+      #|NoteOn[56][ch 3] note=67 vel=106
+      #|NoteOff[72][ch 3] note=67 vel=64
+      #|NoteOn[56][ch 3] note=69 vel=126
+      #|NoteOff[96][ch 3] note=69 vel=64
+      #|NoteOn[32][ch 3] note=65 vel=97
+      #|NoteOff[56][ch 3] note=65 vel=64
+      #|NoteOn[72][ch 3] note=67 vel=126
+      #|NoteOn[256][ch 3] note=60 vel=90
+      #|NoteOff[8][ch 3] note=67 vel=64
+      #|NoteOff[76][ch 3] note=60 vel=64
+      #|NoteOn[44][ch 3] note=65 vel=106
+      #|NoteOff[76][ch 3] note=65 vel=64
+      #|NoteOn[52][ch 3] note=67 vel=122
+      #|NoteOff[388][ch 3] note=67 vel=64
+      #|NoteOn[124][ch 3] note=65 vel=95
+      #|NoteOff[56][ch 3] note=65 vel=64
+      #|NoteOn[72][ch 3] note=67 vel=113
+      #|NoteOff[64][ch 3] note=67 vel=64
+      #|NoteOn[64][ch 3] note=69 vel=127
+      #|NoteOff[100][ch 3] note=69 vel=64
+      #|NoteOn[28][ch 3] note=65 vel=95
+      #|NoteOff[60][ch 3] note=65 vel=64
+      #|NoteOn[68][ch 3] note=67 vel=122
+      #|NoteOn[256][ch 3] note=60 vel=106
+      #|NoteOff[24][ch 3] note=67 vel=64
+      #|NoteOff[56][ch 3] note=60 vel=64
+      #|NoteOn[48][ch 3] note=65 vel=103
+      #|NoteOff[72][ch 3] note=65 vel=64
+      #|NoteOn[56][ch 3] note=67 vel=113
+      #|NoteOff[72][ch 3] note=67 vel=64
+      #|NoteOn[56][ch 3] note=69 vel=109
+      #|NoteOff[80][ch 3] note=69 vel=64
+      #|NoteOn[48][ch 3] note=70 vel=127
+      #|NoteOn[256][ch 3] note=69 vel=100
+      #|NoteOff[44][ch 3] note=70 vel=64
+      #|NoteOff[36][ch 3] note=69 vel=64
+      #|NoteOn[52][ch 3] note=67 vel=117
+      #|NoteOff[80][ch 3] note=67 vel=64
+      #|NoteOn[48][ch 3] note=69 vel=127
+      #|NoteOff[380][ch 3] note=69 vel=64
+      #|NoteOn[0][ch 3] note=67 vel=117
+      #|NoteOn[0][ch 3] note=69 vel=62
+      #|NoteOff[8][ch 3] note=69 vel=64
+      #|NoteOff[792][ch 3] note=67 vel=64
+      #|NoteOn[6112][ch 3] note=53 vel=109
+      #|NoteOff[276][ch 3] note=53 vel=64
+      #|NoteOn[108][ch 3] note=53 vel=95
+      #|NoteOff[64][ch 3] note=53 vel=64
+      #|NoteOn[64][ch 3] note=53 vel=92
+      #|NoteOff[56][ch 3] note=53 vel=64
+      #|NoteOn[72][ch 3] note=53 vel=92
+      #|NoteOff[68][ch 3] note=53 vel=64
+      #|NoteOn[60][ch 3] note=53 vel=95
+      #|NoteOn[0][ch 3] note=58 vel=106
+      #|NoteOff[312][ch 3] note=58 vel=64
+      #|NoteOff[8][ch 3] note=53 vel=64
+      #|NoteOn[64][ch 3] note=58 vel=106
+      #|NoteOn[0][ch 3] note=53 vel=95
+      #|NoteOff[52][ch 3] note=53 vel=64
+      #|NoteOff[8][ch 3] note=58 vel=64
+      #|NoteOn[68][ch 3] note=58 vel=100
+      #|NoteOn[0][ch 3] note=53 vel=90
+      #|NoteOff[52][ch 3] note=53 vel=64
+      #|NoteOff[0][ch 3] note=58 vel=64
+      #|NoteOn[76][ch 3] note=58 vel=112
+      #|NoteOn[0][ch 3] note=53 vel=92
+      #|NoteOff[52][ch 3] note=53 vel=64
+      #|NoteOff[4][ch 3] note=58 vel=64
+      #|NoteOn[80][ch 3] note=58 vel=112
+      #|NoteOn[0][ch 3] note=60 vel=97
+      #|NoteOn[0][ch 3] note=53 vel=95
+      #|NoteOff[328][ch 3] note=58 vel=64
+      #|NoteOff[4][ch 3] note=53 vel=64
+      #|NoteOff[0][ch 3] note=60 vel=64
+      #|NoteOn[44][ch 3] note=63 vel=112
+      #|NoteOn[0][ch 3] note=58 vel=95
+      #|NoteOn[4][ch 3] note=60 vel=88
+      #|NoteOn[0][ch 3] note=53 vel=84
+      #|NoteOff[40][ch 3] note=53 vel=64
+      #|NoteOff[4][ch 3] note=58 vel=64
+      #|NoteOff[4][ch 3] note=60 vel=64
+      #|NoteOff[0][ch 3] note=63 vel=64
+      #|NoteOn[76][ch 3] note=63 vel=106
+      #|NoteOn[0][ch 3] note=58 vel=100
+      #|NoteOn[0][ch 3] note=60 vel=92
+      #|NoteOn[4][ch 3] note=53 vel=88
+      #|NoteOff[36][ch 3] note=58 vel=64
+      #|NoteOff[0][ch 3] note=63 vel=64
+      #|NoteOff[4][ch 3] note=53 vel=64
+      #|NoteOff[0][ch 3] note=60 vel=64
+      #|NoteOn[84][ch 3] note=63 vel=106
+      #|NoteOn[0][ch 3] note=58 vel=100
+      #|NoteOn[0][ch 3] note=60 vel=92
+      #|NoteOn[4][ch 3] note=53 vel=88
+      #|NoteOff[32][ch 3] note=53 vel=64
+      #|NoteOff[8][ch 3] note=60 vel=64
+      #|NoteOff[4][ch 3] note=58 vel=64
+      #|NoteOff[4][ch 3] note=63 vel=64
+      #|NoteOn[76][ch 3] note=68 vel=112
+      #|NoteOn[0][ch 3] note=58 vel=100
+      #|NoteOn[0][ch 3] note=60 vel=90
+      #|NoteOn[4][ch 3] note=63 vel=106
+      #|NoteOn[0][ch 3] note=53 vel=90
+      #|NoteOff[44][ch 3] note=53 vel=64
+      #|NoteOff[4][ch 3] note=58 vel=64
+      #|NoteOff[4][ch 3] note=63 vel=64
+      #|NoteOff[0][ch 3] note=60 vel=64
+      #|NoteOff[8][ch 3] note=68 vel=64
+      #|NoteOn[64][ch 3] note=68 vel=106
+      #|NoteOn[0][ch 3] note=58 vel=95
+      #|NoteOn[0][ch 3] note=60 vel=86
+      #|NoteOn[4][ch 3] note=63 vel=106
+      #|NoteOn[0][ch 3] note=53 vel=84
+      #|NoteOff[32][ch 3] note=53 vel=64
+      #|NoteOff[12][ch 3] note=63 vel=64
+      #|NoteOff[0][ch 3] note=60 vel=64
+      #|NoteOff[0][ch 3] note=68 vel=64
+      #|NoteOff[4][ch 3] note=58 vel=64
+      #|NoteOn[76][ch 3] note=58 vel=95
+      #|NoteOn[0][ch 3] note=68 vel=100
+      #|NoteOn[0][ch 3] note=60 vel=86
+      #|NoteOn[4][ch 3] note=63 vel=100
+      #|NoteOn[0][ch 3] note=53 vel=84
+      #|NoteOff[36][ch 3] note=53 vel=64
+      #|NoteOff[0][ch 3] note=60 vel=64
+      #|NoteOff[4][ch 3] note=63 vel=64
+      #|NoteOff[4][ch 3] note=58 vel=64
+      #|NoteOff[8][ch 3] note=68 vel=64
+      #|NoteOn[72][ch 3] note=75 vel=95
+      #|NoteOn[0][ch 3] note=68 vel=118
+      #|NoteOn[0][ch 3] note=58 vel=106
+      #|NoteOn[4][ch 3] note=63 vel=112
+      #|NoteOn[0][ch 3] note=60 vel=95
+      #|NoteOn[0][ch 3] note=53 vel=92
+      #|NoteOff[40][ch 3] note=53 vel=64
+      #|NoteOff[4][ch 3] note=60 vel=64
+      #|NoteOff[0][ch 3] note=58 vel=64
+      #|NoteOff[4][ch 3] note=68 vel=64
+      #|NoteOff[4][ch 3] note=63 vel=64
+      #|NoteOff[8][ch 3] note=75 vel=64
+      #|NoteOn[64][ch 3] note=75 vel=80
+      #|NoteOn[0][ch 3] note=68 vel=112
+      #|NoteOn[4][ch 3] note=58 vel=106
+      #|NoteOn[0][ch 3] note=63 vel=112
+      #|NoteOn[0][ch 3] note=60 vel=92
+      #|NoteOn[0][ch 3] note=53 vel=92
+      #|NoteOff[36][ch 3] note=53 vel=64
+      #|NoteOff[0][ch 3] note=60 vel=64
+      #|NoteOff[4][ch 3] note=63 vel=64
+      #|NoteOff[0][ch 3] note=58 vel=64
+      #|NoteOff[4][ch 3] note=68 vel=64
+      #|NoteOff[8][ch 3] note=75 vel=64
+      #|NoteOn[72][ch 3] note=75 vel=90
+      #|NoteOn[0][ch 3] note=68 vel=118
+      #|NoteOn[0][ch 3] note=63 vel=118
+      #|NoteOn[4][ch 3] note=58 vel=112
+      #|NoteOn[0][ch 3] note=60 vel=103
+      #|NoteOn[0][ch 3] note=53 vel=95
+      #|NoteOff[56][ch 3] note=53 vel=64
+      #|NoteOff[0][ch 3] note=60 vel=64
+      #|NoteOff[0][ch 3] note=58 vel=64
+      #|NoteOff[8][ch 3] note=63 vel=64
+      #|NoteOff[8][ch 3] note=68 vel=64
+      #|NoteOff[12][ch 3] note=75 vel=64
+      #|NoteOn[44][ch 3] note=58 vel=73
+      #|NoteOn[4][ch 3] note=65 vel=97
+      #|NoteOn[0][ch 3] note=63 vel=80
+      #|NoteOn[0][ch 3] note=53 vel=68
+      #|NoteOff[280][ch 3] note=53 vel=64
+      #|NoteOff[12][ch 3] note=63 vel=64
+      #|NoteOff[8][ch 3] note=58 vel=64
+      #|NoteOff[12][ch 3] note=65 vel=64
+      #|NoteOn[64][ch 3] note=70 vel=75
+      #|NoteOn[0][ch 3] note=58 vel=71
+      #|NoteOn[4][ch 3] note=65 vel=79
+      #|NoteOn[0][ch 3] note=63 vel=83
+      #|NoteOn[0][ch 3] note=53 vel=70
+      #|NoteOff[40][ch 3] note=63 vel=64
+      #|NoteOff[4][ch 3] note=53 vel=64
+      #|NoteOff[0][ch 3] note=70 vel=64
+      #|NoteOff[8][ch 3] note=58 vel=64
+      #|NoteOff[12][ch 3] note=65 vel=64
+      #|NoteOn[60][ch 3] note=70 vel=80
+      #|NoteOn[0][ch 3] note=65 vel=74
+      #|NoteOn[0][ch 3] note=58 vel=75
+      #|NoteOn[4][ch 3] note=63 vel=80
+      #|NoteOn[0][ch 3] note=53 vel=61
+      #|NoteOff[28][ch 3] note=53 vel=64
+      #|NoteOff[12][ch 3] note=63 vel=64
+      #|NoteOff[8][ch 3] note=65 vel=64
+      #|NoteOff[0][ch 3] note=70 vel=64
+      #|NoteOff[4][ch 3] note=58 vel=64
+      #|NoteOn[72][ch 3] note=70 vel=86
+      #|NoteOn[0][ch 3] note=65 vel=77
+      #|NoteOn[4][ch 3] note=58 vel=83
+      #|NoteOn[0][ch 3] note=63 vel=80
+      #|NoteOn[0][ch 3] note=53 vel=73
+      #|NoteOff[36][ch 3] note=53 vel=64
+      #|NoteOff[8][ch 3] note=58 vel=64
+      #|NoteOff[4][ch 3] note=63 vel=64
+      #|NoteOff[0][ch 3] note=65 vel=64
+      #|NoteOff[12][ch 3] note=70 vel=64
+      #|NoteOn[64][ch 3] note=70 vel=95
+      #|NoteOn[0][ch 3] note=58 vel=95
+      #|NoteOn[0][ch 3] note=63 vel=86
+      #|NoteOn[4][ch 3] note=65 vel=79
+      #|NoteOn[0][ch 3] note=72 vel=90
+      #|NoteOn[0][ch 3] note=53 vel=84
+      #|NoteOff[308][ch 3] note=53 vel=64
+      #|NoteOff[4][ch 3] note=63 vel=64
+      #|NoteOff[8][ch 3] note=65 vel=64
+      #|NoteOff[0][ch 3] note=58 vel=64
+      #|NoteOff[8][ch 3] note=70 vel=64
+      #|NoteOff[8][ch 3] note=72 vel=64
+      #|NoteOn[48][ch 3] note=75 vel=77
+      #|NoteOn[0][ch 3] note=70 vel=80
+      #|NoteOn[4][ch 3] note=72 vel=82
+      #|NoteOn[0][ch 3] note=65 vel=80
+      #|NoteOn[0][ch 3] note=58 vel=71
+      #|NoteOn[0][ch 3] note=53 vel=70
+      #|NoteOn[0][ch 3] note=63 vel=80
+      #|NoteOn[4][ch 3] note=56 vel=51
+      #|NoteOff[20][ch 3] note=56 vel=64
+      #|NoteOff[8][ch 3] note=63 vel=64
+      #|NoteOff[0][ch 3] note=53 vel=64
+      #|NoteOff[8][ch 3] note=58 vel=64
+      #|NoteOff[0][ch 3] note=65 vel=64
+      #|NoteOff[0][ch 3] note=70 vel=64
+      #|NoteOff[4][ch 3] note=75 vel=64
+      #|NoteOff[4][ch 3] note=72 vel=64
+      #|NoteOn[72][ch 3] note=58 vel=80
+      #|NoteOn[0][ch 3] note=63 vel=86
+      #|NoteOn[4][ch 3] note=72 vel=92
+      #|NoteOn[0][ch 3] note=53 vel=88
+      #|NoteOn[0][ch 3] note=70 vel=95
+      #|NoteOn[0][ch 3] note=75 vel=86
+      #|NoteOn[0][ch 3] note=65 vel=79
+      #|NoteOff[40][ch 3] note=65 vel=64
+      #|NoteOff[0][ch 3] note=53 vel=64
+      #|NoteOff[0][ch 3] note=63 vel=64
+      #|NoteOff[0][ch 3] note=58 vel=64
+      #|NoteOff[4][ch 3] note=75 vel=64
+      #|NoteOff[0][ch 3] note=70 vel=64
+      #|NoteOff[8][ch 3] note=72 vel=64
+      #|NoteOn[72][ch 3] note=58 vel=77
+      #|NoteOn[0][ch 3] note=53 vel=77
+      #|NoteOn[0][ch 3] note=63 vel=83
+      #|NoteOn[4][ch 3] note=75 vel=80
+      #|NoteOn[0][ch 3] note=65 vel=86
+      #|NoteOn[0][ch 3] note=72 vel=80
+      #|NoteOn[0][ch 3] note=70 vel=90
+      #|NoteOff[44][ch 3] note=53 vel=64
+      #|NoteOff[4][ch 3] note=63 vel=64
+      #|NoteOff[8][ch 3] note=70 vel=64
+      #|NoteOff[4][ch 3] note=65 vel=64
+      #|NoteOff[0][ch 3] note=58 vel=64
+      #|NoteOff[4][ch 3] note=72 vel=64
+      #|NoteOff[4][ch 3] note=75 vel=64
+      #|NoteOn[60][ch 3] note=58 vel=100
+      #|NoteOn[4][ch 3] note=77 vel=95
+      #|NoteOn[0][ch 3] note=72 vel=100
+      #|NoteOn[0][ch 3] note=65 vel=95
+      #|NoteOn[0][ch 3] note=63 vel=106
+      #|NoteOn[4][ch 3] note=53 vel=92
+      #|NoteOn[0][ch 3] note=70 vel=100
+      #|NoteOn[0][ch 3] note=75 vel=55
+      #|NoteOff[4][ch 3] note=75 vel=64
+      #|NoteOff[112][ch 3] note=70 vel=64
+      #|NoteOff[20][ch 3] note=65 vel=64
+      #|NoteOff[4][ch 3] note=63 vel=64
+      #|NoteOff[0][ch 3] note=77 vel=64
+      #|NoteOff[4][ch 3] note=53 vel=64
+      #|NoteOff[0][ch 3] note=72 vel=64
+      #|NoteOff[4][ch 3] note=58 vel=64
+      #|Meta[2960] type=47 len=0 []
+      #|------
+      #|Meta[0] type=3 len=7 [83 84 82 73 78 71 83]
+      #|ControlChange[484][ch 4] ctrl=121 val=0
+      #|ControlChange[0][ch 4] ctrl=0 val=0
+      #|ControlChange[0][ch 4] ctrl=32 val=0
+      #|ProgramChange[0][ch 4] program=48
+      #|ControlChange[0][ch 4] ctrl=7 val=100
+      #|ControlChange[0][ch 4] ctrl=10 val=64
+      #|ControlChange[0][ch 4] ctrl=91 val=127
+      #|ControlChange[0][ch 4] ctrl=93 val=0
+      #|NoteOn[672][ch 4] note=36 vel=113
+      #|NoteOn[0][ch 4] note=24 vel=106
+      #|NoteOff[2948][ch 4] note=24 vel=64
+      #|NoteOff[12][ch 4] note=36 vel=64
+      #|NoteOn[60][ch 4] note=24 vel=109
+      #|NoteOn[0][ch 4] note=36 vel=103
+      #|NoteOff[1460][ch 4] note=36 vel=64
+      #|NoteOff[24][ch 4] note=24 vel=64
+      #|NoteOn[52][ch 4] note=31 vel=106
+      #|NoteOn[0][ch 4] note=43 vel=109
+      #|NoteOff[296][ch 4] note=43 vel=64
+      #|NoteOff[12][ch 4] note=31 vel=64
+      #|NoteOn[76][ch 4] note=31 vel=97
+      #|NoteOn[0][ch 4] note=43 vel=100
+      #|NoteOff[68][ch 4] note=43 vel=64
+      #|NoteOff[0][ch 4] note=31 vel=64
+      #|NoteOn[60][ch 4] note=31 vel=95
+      #|NoteOn[0][ch 4] note=43 vel=92
+      #|NoteOff[52][ch 4] note=31 vel=64
+      #|NoteOff[4][ch 4] note=43 vel=64
+      #|NoteOn[72][ch 4] note=31 vel=100
+      #|NoteOn[0][ch 4] note=43 vel=103
+      #|NoteOff[60][ch 4] note=43 vel=64
+      #|NoteOff[0][ch 4] note=31 vel=64
+      #|NoteOn[72][ch 4] note=31 vel=106
+      #|NoteOn[0][ch 4] note=43 vel=113
+      #|NoteOff[280][ch 4] note=43 vel=64
+      #|NoteOff[20][ch 4] note=31 vel=64
+      #|NoteOn[80][ch 4] note=43 vel=92
+      #|NoteOn[0][ch 4] note=31 vel=100
+      #|NoteOff[64][ch 4] note=31 vel=64
+      #|NoteOff[0][ch 4] note=43 vel=64
+      #|NoteOn[64][ch 4] note=43 vel=77
+      #|NoteOn[0][ch 4] note=31 vel=92
+      #|NoteOff[48][ch 4] note=43 vel=64
+      #|NoteOff[4][ch 4] note=31 vel=64
+      #|NoteOn[76][ch 4] note=43 vel=86
+      #|NoteOn[0][ch 4] note=31 vel=90
+      #|NoteOff[76][ch 4] note=43 vel=64
+      #|NoteOff[24][ch 4] note=31 vel=64
+      #|NoteOn[32][ch 4] note=48 vel=117
+      #|NoteOn[4][ch 4] note=36 vel=100
+      #|NoteOn[0][ch 4] note=24 vel=103
+      #|NoteOff[268][ch 4] note=24 vel=64
+      #|NoteOff[0][ch 4] note=36 vel=64
+      #|NoteOff[12][ch 4] note=48 vel=64
+      #|Meta[13584] type=47 len=0 []
+      #|------
+      #|Meta[0] type=3 len=5 [70 76 85 84 69]
+      #|SysEx[0] len=9 [65 16 66 18 64 0 127 0 65]
+      #|ControlChange[504][ch 5] ctrl=121 val=0
+      #|ControlChange[0][ch 5] ctrl=0 val=0
+      #|ControlChange[0][ch 5] ctrl=32 val=0
+      #|ProgramChange[0][ch 5] program=73
+      #|ControlChange[0][ch 5] ctrl=7 val=100
+      #|ControlChange[0][ch 5] ctrl=10 val=64
+      #|ControlChange[0][ch 5] ctrl=91 val=127
+      #|ControlChange[0][ch 5] ctrl=93 val=0
+      #|SysEx[592] len=72 [65 16 69 18 16 1 0 16 16 16 16 16 16 16 16 0 0 16 24 16 0 0 31 3 3 3 2 3 2 2 2 3 3 2 3 2 3 2 31 15 31 31 7 23 7 31 7 31 31 7 23 7 23 7 31 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 27]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 16 16 16 16 16 16 16 16 0 0 8 28 8 0 0 31 3 3 3 2 3 2 2 2 3 3 2 3 2 3 2 31 15 31 31 7 23 7 31 7 31 31 7 23 7 23 7 31 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 39]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 16 16 16 16 16 16 16 16 0 0 8 28 8 0 0 31 3 3 3 2 3 2 2 2 3 3 2 3 2 3 2 31 15 31 31 7 23 7 31 7 31 31 7 23 7 23 7 31 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 39]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 16 16 16 16 16 16 16 16 0 0 20 30 20 0 0 31 3 3 3 2 3 2 2 2 3 3 2 3 2 3 2 31 15 31 31 7 23 7 31 7 31 31 7 23 7 23 7 31 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 13]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 16 16 16 16 16 16 16 16 0 0 20 30 20 0 0 31 3 3 3 2 3 2 2 2 3 3 2 3 2 3 2 31 15 31 31 7 23 7 31 7 31 31 7 23 7 23 7 31 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 13]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 16 16 16 16 16 16 16 16 0 16 10 15 10 16 0 31 3 3 3 2 3 2 2 2 3 3 2 3 2 3 2 31 15 31 31 7 23 7 31 7 31 31 7 23 7 23 7 31 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 16 16 16 16 16 16 16 16 0 16 10 15 10 16 0 31 3 3 3 2 3 2 2 2 3 3 2 3 2 3 2 31 15 31 31 7 23 7 31 7 31 31 7 23 7 23 7 31 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 16 16 16 16 16 16 16 16 0 8 5 7 5 8 0 31 3 3 3 2 3 2 2 2 3 3 2 19 2 3 2 31 15 31 31 7 23 7 31 7 31 31 7 23 7 23 7 31 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 34]
+      #|SysEx[232] len=72 [65 16 69 18 16 1 0 16 16 16 16 16 16 16 16 0 8 5 7 5 8 0 31 3 3 3 2 3 2 2 2 3 3 2 19 2 3 2 31 15 31 31 7 23 7 31 7 31 31 7 23 7 23 7 31 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 34]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 16 16 16 16 16 16 16 16 0 4 2 3 2 4 0 31 3 3 3 2 3 2 2 2 3 3 18 27 18 3 2 31 15 31 31 7 23 7 31 7 31 31 7 23 7 23 7 31 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 12]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 16 16 16 16 16 16 16 16 0 4 2 3 2 4 0 31 3 3 3 2 3 2 2 2 3 3 18 27 18 3 2 31 15 31 31 7 23 7 31 7 31 31 7 23 7 23 7 31 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 12]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 16 16 16 16 16 16 16 16 4 2 3 2 4 0 0 31 3 3 3 2 3 2 2 2 3 19 26 19 2 3 2 31 15 31 31 7 23 7 31 7 31 31 7 23 7 23 7 31 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 12]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 16 16 16 16 16 16 16 16 20 2 3 2 4 0 0 0 3 3 3 3 2 3 2 2 2 19 27 18 3 2 3 2 15 15 31 31 7 23 7 31 7 31 31 7 23 7 23 7 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 71]
+      #|SysEx[100] len=72 [65 16 69 18 16 1 0 16 16 16 16 16 16 16 16 20 18 3 2 4 0 0 0 3 3 3 3 3 2 3 2 2 18 27 19 2 3 2 3 15 15 15 31 31 7 23 7 31 7 31 31 7 23 7 23 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 46]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 16 16 16 16 16 16 16 16 20 18 19 2 4 0 0 0 3 3 3 3 3 3 2 3 2 18 26 19 3 2 3 2 15 15 15 15 31 31 7 23 7 31 7 31 31 7 23 7 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 38]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 16 16 16 16 16 16 16 16 20 18 19 18 4 0 0 0 3 3 3 3 3 3 3 2 3 18 26 18 3 3 2 3 15 15 15 15 15 31 31 7 23 7 31 7 31 31 7 23 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 13]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 31 16 16 16 16 16 16 16 20 18 19 18 20 0 0 0 31 3 3 3 3 3 3 3 2 19 26 18 2 3 3 2 31 15 15 15 15 15 31 31 7 23 7 31 7 31 31 7 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 74]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 31 16 16 16 16 16 16 20 18 19 18 20 16 0 0 0 31 3 3 3 3 3 3 3 18 27 18 2 2 3 3 30 31 15 15 15 15 15 31 31 7 23 7 31 7 31 31 0 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 69]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 0 31 16 16 16 16 16 20 18 19 18 20 16 16 0 0 0 31 3 3 3 3 3 3 19 26 19 2 2 2 3 30 30 31 15 15 15 15 15 31 31 7 23 7 31 7 31 0 0 16 16 16 16 16 16 16 16 16 16 16 16 16 16 89]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 30 16 16 16 16 20 18 19 18 20 16 16 16 0 0 0 31 3 3 3 3 3 19 27 18 3 2 2 2 30 30 30 31 15 15 15 15 15 31 31 7 23 7 31 7 0 0 0 16 16 16 16 16 16 16 16 16 16 16 16 16 110]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 0 0 0 28 16 16 16 20 18 19 18 20 16 16 16 1 0 0 0 15 3 3 3 3 19 27 19 2 3 2 2 9 30 30 30 31 15 15 15 15 15 31 31 7 23 7 31 0 0 0 0 16 16 16 16 16 16 16 16 16 16 16 16 31]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 24 16 16 20 18 19 18 20 16 16 16 1 1 0 0 0 7 3 3 3 19 27 19 3 2 3 2 5 5 30 30 30 31 15 15 15 15 15 31 31 7 23 7 0 0 0 0 0 16 16 16 16 16 16 16 16 16 16 16 106]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 16 16 20 18 19 18 20 16 16 16 0 1 1 0 0 0 3 3 3 19 27 19 3 3 2 3 30 19 19 30 30 30 31 15 15 15 15 15 31 31 7 23 0 0 0 0 0 0 16 16 16 16 16 16 16 16 16 16 101]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 16 20 18 19 18 20 16 16 16 0 0 1 1 0 0 0 3 3 19 27 19 3 3 3 2 0 30 9 9 30 30 30 31 15 15 15 15 15 31 31 7 0 0 0 0 0 0 0 16 16 16 16 16 16 16 16 16 51]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 20 18 19 18 20 16 16 16 0 0 0 1 1 0 0 0 3 19 27 19 3 3 3 3 0 0 30 5 5 30 30 30 31 15 15 15 15 15 31 31 0 0 0 0 0 0 0 0 16 16 16 16 16 16 16 16 100]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 2 0 0 0 0 0 0 0 4 18 19 18 20 16 16 16 0 0 0 0 1 1 0 0 0 19 27 19 3 3 3 3 0 0 18 30 19 19 30 30 30 31 15 15 15 15 15 31 0 0 0 0 0 0 0 0 0 16 16 16 16 16 16 16 118]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 4 0 0 0 0 0 0 4 2 19 18 20 16 16 16 0 0 0 0 0 1 1 0 0 16 27 19 3 3 3 3 0 0 0 0 30 9 9 30 30 30 31 15 15 15 15 15 0 0 0 0 0 0 0 0 0 0 16 16 16 16 16 16 92]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 8 0 0 0 0 0 4 2 3 18 20 16 16 16 0 0 0 0 0 0 1 1 0 16 24 19 3 3 3 3 0 0 0 0 18 30 5 5 31 30 30 31 15 15 15 15 0 0 0 0 0 0 0 0 0 0 0 16 16 16 16 16 127]
+      #|SysEx[96] len=72 [65 16 69 18 16 1 0 0 0 0 16 0 0 0 0 4 2 3 2 20 16 16 16 2 0 0 0 0 0 0 1 1 16 24 16 3 3 3 3 0 0 0 0 0 0 30 19 19 31 30 30 31 15 15 15 0 0 0 0 0 0 0 0 0 0 0 0 16 16 16 16 29]
+      #|SysEx[112] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 4 2 3 2 4 16 16 16 0 4 0 0 0 0 0 0 1 17 24 16 0 3 3 3 0 0 0 0 0 0 0 30 9 9 31 30 30 31 15 15 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 16 113]
+      #|SysEx[112] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 4 2 3 2 4 0 16 16 0 0 8 0 0 0 0 0 0 17 25 16 0 0 3 3 0 0 0 0 0 0 0 0 30 5 5 31 30 30 31 15 16 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 23]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 4 2 3 2 4 0 0 16 0 0 0 16 0 0 0 0 0 16 25 17 0 0 0 3 0 1 0 0 0 0 0 0 0 30 19 19 30 30 30 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 53]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 1 0 0 0 0 4 2 3 2 4 0 0 24 0 0 0 0 0 0 0 0 0 16 25 17 0 0 0 7 0 2 0 0 0 0 0 0 0 30 11 11 30 30 30 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 71]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 2 0 0 0 0 4 2 3 2 4 0 0 28 0 0 0 0 0 0 0 0 0 16 25 17 0 0 0 15 0 4 0 0 0 0 0 0 0 30 5 5 30 30 30 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 68]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 4 0 0 0 4 2 3 2 4 0 0 0 30 0 0 0 0 0 0 0 0 16 24 17 1 0 0 0 31 0 8 0 0 0 0 0 0 0 30 19 19 30 30 30 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 0 0 8 0 0 0 4 2 3 2 4 0 0 0 31 0 0 0 0 0 0 0 0 16 24 17 1 0 0 0 31 0 16 0 0 0 0 0 0 18 30 9 9 30 30 30 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 5]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 16 0 0 0 4 2 3 2 4 0 0 0 31 0 1 0 0 0 0 0 0 16 24 17 1 0 0 0 31 0 0 0 0 0 0 0 0 0 30 5 5 30 30 30 31 0 0 0 16 0 0 0 0 0 0 0 0 0 0 0 16 22]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 4 2 3 2 4 0 0 0 0 31 0 2 0 0 0 0 0 16 24 16 1 1 0 0 0 31 0 0 0 1 0 0 0 0 0 30 19 19 30 30 30 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 24]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 8 5 7 5 8 0 0 0 0 31 0 4 0 0 0 0 0 0 16 0 0 1 1 0 0 31 0 0 0 2 0 0 0 0 0 0 30 11 11 30 30 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 89]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 8 5 7 5 8 0 0 0 0 31 0 8 0 0 0 0 0 0 16 0 0 1 1 0 0 31 0 0 0 4 0 0 0 0 0 0 30 5 5 30 30 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 95]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 8 5 7 5 8 0 0 0 0 31 0 16 0 0 0 0 0 0 16 0 0 1 1 0 0 31 0 0 0 8 0 0 0 0 0 0 30 19 19 30 30 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 55]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 1 0 0 0 0 8 5 7 5 8 0 0 0 0 31 0 0 0 0 0 0 0 0 16 0 0 0 1 1 0 31 0 0 0 16 0 0 0 0 0 0 0 30 9 9 30 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 112]
+      #|SysEx[96] len=72 [65 16 69 18 16 1 0 0 4 0 0 0 0 4 14 31 14 4 0 0 0 0 31 0 0 0 1 0 0 0 16 24 16 0 0 1 2 2 31 0 0 0 0 0 0 0 0 0 0 0 0 28 10 10 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 77]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 16 0 0 0 0 2 1 1 1 2 0 0 0 0 31 0 0 0 4 0 0 0 8 28 8 0 0 0 3 6 31 0 0 0 0 0 0 0 0 0 0 0 0 0 24 12 31 0 16 0 0 0 0 0 0 0 0 0 0 0 0 0 16 126]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 31 0 0 0 16 0 0 0 20 30 20 0 0 0 0 7 31 0 2 0 0 0 0 0 0 0 0 0 0 0 0 16 31 0 0 0 0 0 0 0 0 0 0 0 0 0 16 0 16 1]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 0 0 2 0 0 1 0 0 0 1 0 0 0 0 31 0 0 0 0 0 0 0 20 30 20 0 0 0 0 0 31 0 8 0 0 0 0 0 0 0 0 0 0 0 1 0 31 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 16 15]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 0 0 8 0 0 1 0 0 0 1 0 0 0 0 31 0 1 0 0 0 0 0 20 30 20 0 0 0 0 0 31 0 0 0 0 0 0 0 0 0 0 0 0 4 2 2 31 0 0 0 16 0 0 0 0 0 0 0 0 0 0 0 16 25]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 31 0 4 0 0 0 0 0 20 30 20 0 0 0 0 0 31 0 0 1 0 0 0 0 0 0 0 0 0 4 4 5 31 0 0 0 0 0 0 0 0 0 0 0 0 16 16 16 16 120]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 1 3 7 3 1 0 0 0 0 31 0 16 0 0 0 0 0 20 30 20 0 0 0 0 0 31 0 0 2 0 0 0 0 0 0 0 0 0 5 9 11 31 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 16 98]
+      #|SysEx[100] len=72 [65 16 69 18 16 1 0 0 4 0 0 0 0 0 0 0 0 0 0 0 0 0 31 0 0 0 0 0 0 16 10 15 10 16 0 0 0 0 31 0 0 16 0 0 0 0 0 0 0 0 0 2 27 23 31 0 0 0 0 0 0 0 0 0 0 0 16 16 16 16 16 55]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 31 0 0 2 0 0 0 8 5 7 5 8 0 0 1 1 31 0 0 0 0 0 0 0 0 16 0 0 1 21 7 15 31 0 0 0 0 0 0 0 0 0 0 16 16 16 16 16 16 81]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 31 0 0 4 0 0 4 2 3 2 4 0 0 2 2 2 31 0 0 0 0 0 0 16 24 16 0 1 3 11 15 31 31 0 0 0 0 0 0 0 0 0 0 0 0 16 16 16 16 68]
+      #|SysEx[112] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 31 0 0 8 0 4 2 3 2 4 0 0 0 8 4 5 31 0 0 0 0 0 16 24 16 0 0 2 6 23 31 31 31 0 0 0 0 0 0 0 0 0 0 0 16 16 16 16 16 5]
+      #|SysEx[96] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 31 0 0 16 4 2 3 2 4 0 0 0 0 1 25 11 31 0 0 0 0 16 24 16 0 0 0 4 13 15 31 31 31 0 0 0 16 0 0 0 0 0 0 0 0 0 16 16 16 120]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 31 0 0 0 0 4 2 3 2 4 0 0 0 2 19 23 31 0 0 0 1 0 16 24 16 0 0 8 26 30 31 31 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 126]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 0 2 0 0 0 0 0 0 0 0 0 1 1 1 31 0 0 0 4 2 3 2 4 0 0 0 1 5 7 15 31 0 0 0 10 16 24 16 0 0 0 16 20 28 30 31 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 19]
+      #|SysEx[100] len=72 [65 16 69 18 16 1 0 0 0 4 0 0 0 0 0 0 0 0 0 1 2 2 31 0 0 0 8 5 7 5 8 0 0 1 3 11 15 31 31 0 4 14 4 0 16 0 0 0 0 0 8 24 28 30 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 11]
+      #|SysEx[100] len=72 [65 16 69 18 16 1 0 0 0 8 1 0 0 0 1 0 0 0 0 0 6 5 31 0 0 0 0 20 30 20 0 0 0 2 6 23 31 31 31 12 22 24 14 20 0 0 0 0 0 0 16 16 24 30 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 24]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 16 2 1 1 1 2 0 0 0 0 5 9 11 31 0 0 1 0 8 28 8 0 0 0 4 13 15 31 31 31 16 4 0 4 16 0 0 0 0 0 0 0 0 16 25 31 0 16 0 0 0 0 0 0 0 0 0 0 16 16 16 16 54]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 0 4 2 3 2 4 0 0 0 18 19 23 31 0 0 0 0 0 16 24 16 0 0 8 26 30 31 31 31 0 2 0 0 0 0 0 0 0 0 0 0 0 1 21 31 0 0 0 0 0 0 16 16 0 0 0 0 16 16 16 16 25]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 1 8 5 7 5 8 1 0 0 1 5 7 15 31 0 0 0 0 0 16 0 0 0 0 16 20 28 30 31 31 0 8 0 0 0 0 1 1 0 0 0 0 1 1 19 31 0 0 0 0 0 16 16 16 0 16 16 16 16 16 16 16 7]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 16 10 15 10 16 0 0 0 1 3 11 15 31 31 0 0 24 0 0 0 0 0 24 0 0 8 24 28 28 31 0 0 0 0 0 1 3 3 0 1 1 1 3 3 31 31 0 0 0 0 16 16 16 16 16 16 16 16 16 16 16 16 27]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 16 10 15 10 16 0 0 0 0 2 6 23 31 31 31 0 0 12 0 0 0 0 0 12 0 0 16 16 24 26 31 0 0 0 0 1 3 7 7 1 3 3 3 3 7 31 31 0 0 0 0 0 16 16 16 16 16 16 16 16 16 16 16 19]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 8 5 7 5 8 0 0 0 4 13 15 31 31 31 0 0 2 0 16 0 0 0 0 2 0 0 0 16 21 31 0 0 0 0 2 7 15 15 7 3 7 7 15 15 31 31 0 0 0 0 0 16 16 16 16 16 16 16 16 16 16 16 46]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 8 5 7 5 8 0 0 0 0 8 26 30 31 31 31 0 0 0 19 0 0 0 0 0 0 3 0 0 0 25 31 0 0 0 0 4 15 31 31 7 15 15 15 15 31 31 31 0 0 0 0 0 0 0 16 16 16 16 16 16 16 16 16 98]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 16 10 15 10 16 0 0 0 0 16 20 28 30 31 31 0 0 0 0 1 0 1 1 0 0 0 1 0 1 19 31 0 0 0 0 12 30 30 31 31 15 15 15 31 31 31 31 0 0 0 0 0 0 0 0 0 0 0 16 16 16 16 16 90]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 16 10 15 10 16 0 0 0 0 0 0 8 24 28 31 31 0 0 0 5 3 4 3 7 1 0 1 3 7 3 7 30 0 0 0 0 24 20 22 22 14 30 30 15 31 7 31 31 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 16 35]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 16 10 15 10 16 0 0 0 0 0 0 16 24 24 30 31 0 2 6 11 0 13 18 5 12 2 15 28 9 11 31 31 0 0 16 0 24 0 8 12 24 16 20 28 22 14 31 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 87]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 8 5 7 5 8 0 0 0 1 0 2 16 16 29 31 0 1 0 16 4 0 4 2 9 22 10 25 3 22 31 31 0 0 0 0 20 0 0 0 16 20 5 0 0 20 31 31 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 16 124]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 4 2 3 2 4 0 0 0 1 0 0 0 1 27 31 0 0 16 26 16 0 0 2 0 2 9 0 2 9 31 31 0 0 0 0 0 2 0 16 0 0 8 8 2 9 31 31 0 0 0 0 0 0 0 0 0 0 0 0 16 16 16 16 105]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 4 2 3 2 5 1 0 0 0 0 2 0 0 2 7 31 0 16 24 16 0 4 0 1 0 4 16 0 0 24 31 31 0 0 0 0 0 0 2 0 0 0 16 16 1 19 31 31 0 0 0 0 0 0 0 0 0 0 16 16 16 16 16 16 57]
+      #|SysEx[92] len=72 [65 16 69 18 16 1 0 2 1 1 1 2 0 0 0 0 4 0 0 17 5 15 31 0 8 28 8 0 16 16 0 0 0 0 8 0 17 31 31 0 0 0 0 0 0 0 0 4 0 3 1 19 7 31 31 0 0 0 0 0 0 0 0 0 0 0 0 16 16 16 16 93]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 1 0 0 0 1 0 0 0 0 0 8 0 0 11 31 31 0 20 30 20 0 0 0 8 8 0 0 0 0 2 31 31 0 0 0 0 0 0 1 0 0 0 4 18 7 31 31 31 0 0 0 0 0 0 16 0 0 0 0 16 16 16 16 16 43]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 21 23 31 31 16 10 15 10 16 0 0 0 0 4 4 0 18 27 31 31 0 0 0 0 0 0 0 0 0 0 0 5 15 31 31 31 0 0 0 0 0 0 0 0 0 0 16 16 16 16 16 16 126]
+      #|SysEx[100] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 11 15 31 31 8 5 7 5 8 0 0 0 2 12 30 27 10 21 27 31 0 0 16 0 0 0 0 0 0 0 0 8 31 31 31 31 0 0 0 0 0 0 0 0 0 0 0 16 16 16 16 16 114]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 3 1 2 22 31 31 31 8 5 7 5 8 0 0 24 26 28 28 18 9 11 31 31 0 0 16 0 0 0 0 0 0 0 0 17 31 31 31 31 0 0 0 0 0 0 0 0 16 16 16 16 16 16 16 16 106]
+      #|NoteOn[24][ch 5] note=79 vel=103
+      #|NoteOn[0][ch 5] note=67 vel=103
+      #|NoteOff[68][ch 5] note=67 vel=64
+      #|NoteOff[0][ch 5] note=79 vel=64
+      #|NoteOn[4][ch 5] note=81 vel=77
+      #|NoteOn[0][ch 5] note=69 vel=77
+      #|SysEx[4] len=72 [65 16 69 18 16 1 0 1 0 0 0 1 0 0 0 2 0 3 0 12 28 31 31 0 20 30 20 0 0 0 8 0 20 0 9 19 23 31 31 0 16 0 16 0 0 0 0 1 1 1 3 31 31 31 31 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 13]
+      #|NoteOn[56][ch 5] note=83 vel=88
+      #|NoteOn[0][ch 5] note=71 vel=88
+      #|NoteOff[8][ch 5] note=69 vel=64
+      #|NoteOff[0][ch 5] note=81 vel=64
+      #|SysEx[36] len=72 [65 16 69 18 16 1 0 2 1 1 1 2 0 0 0 1 4 0 20 25 25 31 31 0 8 28 8 0 0 0 0 0 0 8 2 7 15 31 31 1 13 1 13 1 1 1 1 3 3 3 7 31 31 31 31 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 41]
+      #|NoteOff[16][ch 5] note=71 vel=64
+      #|NoteOff[0][ch 5] note=83 vel=64
+      #|NoteOn[0][ch 5] note=84 vel=86
+      #|NoteOn[0][ch 5] note=72 vel=86
+      #|NoteOn[48][ch 5] note=86 vel=100
+      #|NoteOn[0][ch 5] note=74 vel=100
+      #|NoteOff[16][ch 5] note=72 vel=64
+      #|NoteOff[0][ch 5] note=84 vel=64
+      #|SysEx[20] len=72 [65 16 69 18 16 1 0 4 2 3 2 4 0 0 0 0 0 0 0 0 16 25 31 0 18 24 18 0 0 0 0 0 0 0 4 15 31 31 31 3 7 3 7 3 3 3 3 7 7 7 15 31 31 31 31 0 0 0 0 16 16 16 16 16 16 16 16 16 16 16 16 108]
+      #|NoteOn[20][ch 5] note=88 vel=90
+      #|NoteOn[4][ch 5] note=76 vel=90
+      #|NoteOff[8][ch 5] note=74 vel=64
+      #|NoteOff[0][ch 5] note=86 vel=64
+      #|NoteOn[36][ch 5] note=89 vel=80
+      #|NoteOff[4][ch 5] note=76 vel=64
+      #|NoteOff[0][ch 5] note=88 vel=64
+      #|NoteOn[0][ch 5] note=77 vel=80
+      #|SysEx[28] len=72 [65 16 69 18 16 1 0 8 5 7 5 8 0 0 0 0 0 0 0 0 1 19 31 0 1 16 1 0 0 0 0 0 0 0 8 31 31 31 31 6 22 6 22 7 7 7 7 15 15 15 31 31 31 31 31 0 0 0 0 0 0 0 16 16 16 16 16 16 16 16 16 89]
+      #|NoteOn[28][ch 5] note=91 vel=82
+      #|NoteOn[0][ch 5] note=79 vel=82
+      #|NoteOff[12][ch 5] note=77 vel=64
+      #|NoteOff[0][ch 5] note=89 vel=64
+      #|NoteOn[44][ch 5] note=93 vel=88
+      #|NoteOn[0][ch 5] note=81 vel=88
+      #|NoteOff[16][ch 5] note=79 vel=64
+      #|NoteOff[0][ch 5] note=91 vel=64
+      #|SysEx[0] len=72 [65 16 69 18 16 1 0 16 10 15 10 16 0 0 0 0 0 0 0 9 11 31 31 0 8 1 9 0 0 0 0 0 0 0 17 31 31 31 31 20 28 20 12 22 14 14 15 31 31 31 31 31 31 31 31 0 0 0 0 0 0 0 0 0 0 0 0 16 16 16 16 114]
+      #|NoteOn[28][ch 5] note=95 vel=79
+      #|NoteOff[4][ch 5] note=93 vel=64
+      #|NoteOn[0][ch 5] note=83 vel=79
+      #|NoteOff[4][ch 5] note=81 vel=64
+      #|NoteOn[52][ch 5] note=96 vel=95
+      #|NoteOn[0][ch 5] note=84 vel=95
+      #|SysEx[12] len=72 [65 16 69 18 16 1 0 16 10 15 10 16 0 0 0 0 0 0 1 19 23 31 31 2 3 0 7 6 4 6 8 1 7 0 2 31 31 31 31 24 12 24 0 20 28 28 14 30 14 30 30 31 31 31 31 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 16 111]
+      #|NoteOff[8][ch 5] note=83 vel=64
+      #|NoteOff[0][ch 5] note=95 vel=64
+      #|NoteOn[36][ch 5] note=98 vel=97
+      #|NoteOn[0][ch 5] note=86 vel=97
+      #|NoteOff[24][ch 5] note=84 vel=64
+      #|NoteOff[0][ch 5] note=96 vel=64
+      #|NoteOff[20][ch 5] note=86 vel=64
+      #|NoteOff[0][ch 5] note=98 vel=64
+      #|SysEx[8] len=72 [65 16 69 18 16 1 0 16 10 15 10 16 0 0 0 0 0 0 2 7 15 31 31 4 0 5 7 14 1 15 3 19 3 3 7 31 31 31 31 16 16 8 16 26 8 24 4 12 28 28 28 30 31 31 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 56]
+      #|NoteOn[4][ch 5] note=100 vel=97
+      #|NoteOn[0][ch 5] note=88 vel=97
+      #|NoteOn[36][ch 5] note=101 vel=88
+      #|NoteOn[0][ch 5] note=89 vel=88
+      #|NoteOff[20][ch 5] note=88 vel=64
+      #|NoteOff[0][ch 5] note=100 vel=64
+      #|NoteOn[32][ch 5] note=103 vel=106
+      #|NoteOn[0][ch 5] note=91 vel=106
+      #|SysEx[12] len=72 [65 16 69 18 16 1 0 16 10 15 10 16 0 0 0 0 1 0 4 15 31 31 31 17 0 0 0 2 8 5 2 23 7 7 15 31 31 31 31 0 0 0 0 8 16 16 8 8 8 24 24 28 30 30 30 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3]
+      #|NoteOff[8][ch 5] note=89 vel=64
+      #|NoteOff[0][ch 5] note=101 vel=64
+      #|NoteOff[44][ch 5] note=91 vel=64
+      #|NoteOff[0][ch 5] note=103 vel=64
+      #|SysEx[52] len=72 [65 16 69 18 16 1 0 8 5 7 5 8 0 0 0 0 1 2 8 31 31 31 31 0 4 16 0 0 0 3 7 15 15 15 31 31 31 31 31 0 0 0 0 0 0 0 16 16 16 16 16 24 28 28 28 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 37]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 4 2 3 2 4 0 0 0 0 0 4 17 31 31 31 31 0 16 24 16 0 0 6 15 31 31 31 31 31 31 31 31 0 0 0 0 0 0 0 0 0 0 0 0 16 24 24 24 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 50]
+      #|SysEx[92] len=72 [65 16 69 18 16 1 0 2 1 1 1 2 0 0 0 1 1 1 11 31 31 31 31 0 8 28 8 0 0 12 30 30 30 30 30 31 31 31 31 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 100]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 1 0 0 0 1 0 0 1 3 3 3 7 31 31 31 31 0 20 30 20 0 0 24 28 28 28 28 28 30 31 31 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 123]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 1 3 7 7 7 15 31 31 31 31 16 10 15 10 16 0 16 24 24 24 24 24 28 30 30 30 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10]
+      #|SysEx[112] len=72 [65 16 69 18 16 1 0 1 0 0 0 1 0 3 7 15 15 15 31 31 31 31 31 0 18 27 18 0 0 0 16 16 16 16 16 24 28 28 28 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16]
+      #|SysEx[96] len=72 [65 16 69 18 16 1 0 1 0 0 0 1 0 6 15 31 31 31 31 31 31 31 31 0 18 27 18 0 0 0 0 0 0 0 0 16 24 24 24 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 40]
+      #|SysEx[112] len=72 [65 16 69 18 16 1 0 2 1 1 1 2 0 12 30 30 30 30 30 31 31 31 31 0 0 17 1 1 0 0 0 0 0 0 0 0 16 16 16 0 0 0 16 0 0 0 0 0 0 0 0 0 0 1 3 0 0 0 0 0 0 0 0 0 0 0 0 16 16 16 16 51]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 3 2 4 0 24 28 28 28 28 28 28 28 30 31 31 31 0 0 1 3 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 1 1 3 7 0 0 0 0 0 0 0 0 0 0 0 16 16 16 16 16 12]
+      #|SysEx[96] len=72 [65 16 69 18 16 1 0 4 8 0 24 28 28 28 28 28 28 30 30 31 31 31 31 0 2 7 7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 3 7 7 0 0 0 0 0 0 0 0 0 0 16 16 16 16 16 16 104]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 16 0 24 28 28 28 28 28 28 28 30 30 31 31 31 31 0 0 2 7 7 0 0 0 0 0 0 0 0 0 0 31 0 0 0 0 0 0 0 0 0 0 1 1 3 7 7 31 0 0 0 0 0 0 0 0 0 16 16 16 16 16 16 16 122]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 24 28 28 28 28 28 28 28 30 30 31 31 31 31 31 0 0 0 2 7 7 0 0 0 0 0 0 0 0 29 31 0 0 0 0 0 0 0 0 0 1 1 3 7 7 31 31 0 0 0 0 0 0 0 0 16 16 16 16 16 16 16 16 31]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 24 28 28 28 28 28 28 28 30 30 31 31 31 31 31 31 0 0 0 2 7 7 0 0 0 0 0 0 0 24 31 0 0 0 0 0 0 0 0 0 1 1 3 7 7 31 31 7 0 0 0 0 0 0 0 16 16 16 16 16 16 16 16 16 110]
+      #|SysEx[100] len=72 [65 16 69 18 16 1 0 28 28 28 28 28 28 28 30 30 31 31 31 31 31 31 27 0 0 2 7 7 5 0 0 0 0 0 0 16 31 0 0 0 0 0 0 0 0 0 1 1 3 7 7 15 31 7 6 0 0 0 0 0 0 16 16 16 16 16 16 16 16 16 16 104]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 28 28 28 28 28 28 30 30 31 31 31 31 31 31 27 31 0 0 2 7 7 5 5 0 0 0 0 0 29 0 0 0 0 0 0 0 0 0 1 1 3 7 7 7 31 7 6 6 0 0 0 0 0 16 16 16 16 16 16 16 16 16 16 16 100]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 28 28 28 28 28 30 30 31 31 31 31 31 31 27 27 27 0 0 0 2 7 7 5 5 0 0 0 24 0 0 0 0 0 0 0 0 0 1 1 3 7 7 7 31 7 6 6 7 0 0 0 0 16 16 16 16 16 16 16 16 16 16 16 16 87]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 28 28 28 28 30 30 31 31 31 31 31 31 27 27 31 27 0 0 0 0 2 7 7 5 8 0 16 0 0 0 0 0 0 0 0 0 1 1 3 7 23 7 15 7 6 6 6 6 0 0 0 16 16 16 16 16 16 16 16 16 16 16 16 16 68]
+      #|SysEx[88] len=72 [65 16 69 18 16 1 0 28 28 30 30 31 31 31 31 31 31 31 27 31 27 27 27 0 0 0 0 2 7 7 5 8 0 0 0 0 0 0 0 0 0 0 1 1 3 7 7 23 7 7 6 7 6 7 6 0 0 16 16 16 16 16 16 16 16 16 16 16 16 16 16 66]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 28 30 30 31 31 31 31 31 31 31 27 31 27 27 27 27 0 0 0 0 2 7 7 5 8 0 0 0 0 0 0 0 0 0 1 1 3 7 7 7 23 7 6 6 7 6 6 6 0 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 46]
+      #|SysEx[100] len=72 [65 16 69 18 16 1 0 30 30 31 31 31 31 31 31 31 27 27 27 27 31 27 31 0 0 0 0 1 3 3 2 4 0 0 0 0 0 0 0 0 1 1 3 7 23 23 23 15 6 6 7 6 7 6 7 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 123]
+      #|SysEx[100] len=72 [65 16 69 18 16 1 0 30 31 31 31 31 31 31 31 27 27 31 27 27 27 31 31 0 0 0 0 0 1 3 3 3 4 0 0 0 0 0 0 1 1 3 7 7 7 23 23 22 15 6 6 6 6 7 7 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 115]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 31 31 31 31 31 31 31 27 31 27 27 27 31 31 31 1 0 0 0 0 16 1 3 3 3 4 0 0 0 0 0 0 1 3 7 7 15 7 23 22 22 15 6 6 6 7 7 4 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 0 1]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 31 31 31 31 31 31 27 27 31 27 27 27 31 31 17 17 0 0 0 24 0 0 1 3 3 2 4 3 3 1 0 0 3 7 7 31 7 7 6 22 23 23 14 22 23 7 6 6 16 16 16 16 16 16 16 16 16 16 16 16 16 16 0 0 77]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 31 31 31 31 31 31 27 31 27 27 27 31 31 9 9 9 0 0 29 0 0 0 0 2 7 7 8 0 0 0 0 7 7 7 31 7 7 6 6 7 6 7 22 7 7 5 5 5 16 16 16 16 16 16 16 16 16 16 16 16 16 0 0 0 55]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 31 31 31 31 31 27 31 27 27 31 27 31 31 5 5 5 0 16 31 0 0 0 0 0 2 7 7 8 0 0 7 7 7 15 31 7 7 6 7 6 6 6 6 23 7 4 4 4 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 118]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 31 31 31 31 27 27 31 27 27 27 31 31 19 19 19 19 16 31 0 0 0 0 0 0 0 2 7 7 8 0 7 7 15 31 7 7 6 7 6 6 6 6 7 7 22 6 6 6 16 16 16 16 16 16 16 16 16 16 16 16 0 0 0 0 23]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 31 31 31 27 27 27 31 27 27 31 31 9 9 9 9 31 24 31 0 0 0 0 0 0 0 2 7 7 5 0 7 7 31 31 7 6 6 7 6 6 6 7 7 13 13 5 5 7 16 16 16 16 16 16 16 16 16 16 16 0 0 0 0 16 46]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 31 31 27 31 27 27 27 31 27 31 31 5 5 5 5 31 31 0 0 0 0 0 0 0 0 0 2 7 7 7 7 7 31 7 6 6 7 6 6 6 7 7 7 12 28 4 4 7 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 32]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 31 31 27 27 31 27 27 27 27 31 31 19 19 19 19 31 31 0 0 0 0 0 0 0 0 0 2 7 7 7 7 7 31 7 6 6 6 6 6 7 6 7 7 14 30 6 6 7 16 16 16 16 16 16 16 16 16 16 16 0 0 0 0 16 37]
+      #|SysEx[24] len=72 [65 16 69 18 16 1 0 31 31 31 27 27 27 31 27 27 31 31 9 9 9 9 31 31 0 0 0 0 0 0 0 0 0 0 2 7 7 7 15 31 7 7 6 6 6 7 6 6 7 7 13 13 5 5 23 16 16 16 16 16 16 16 16 16 16 16 0 0 0 0 16 75]
+      #|SysEx[112] len=72 [65 16 69 18 16 1 0 31 31 30 22 22 30 22 22 22 30 30 10 10 10 10 30 29 29 0 0 0 0 0 0 0 2 2 7 7 7 15 26 31 31 3 3 3 3 3 3 3 3 3 6 6 2 18 27 16 16 16 0 0 16 0 0 0 16 16 0 0 0 0 16 5]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 31 31 28 28 28 12 28 12 12 12 12 28 28 4 4 4 16 16 0 0 0 0 0 0 0 2 2 7 7 7 15 26 15 15 1 1 1 1 1 1 1 1 1 1 1 1 17 25 16 16 16 16 16 16 16 16 16 16 16 16 16 0 0 0 59]
+      #|SysEx[96] len=72 [65 16 69 18 16 1 0 30 30 24 24 24 24 24 24 24 24 24 24 24 8 8 8 0 0 0 0 0 0 0 0 2 2 7 7 7 15 26 2 3 3 0 0 0 0 0 0 0 0 0 0 0 16 24 0 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 33]
+      #|SysEx[100] len=72 [65 16 69 18 16 1 0 24 24 16 16 16 16 16 16 16 16 16 16 16 16 17 16 0 0 0 0 0 0 2 2 2 7 7 7 15 31 18 2 0 0 0 0 0 0 0 0 0 0 0 0 16 24 12 0 16 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 45]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 2 2 2 7 7 7 15 31 26 10 2 0 0 0 0 0 0 0 0 0 0 0 16 24 28 20 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 38]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 3 0 0 0 0 0 2 2 2 2 7 7 7 15 31 26 10 2 0 0 0 0 0 0 0 0 0 0 0 16 24 28 22 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 32]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 3 0 0 0 0 2 2 2 2 7 7 7 7 15 31 26 10 2 0 0 0 0 0 0 0 0 0 0 0 16 24 28 22 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 25]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 3 0 0 0 2 2 2 2 2 7 7 7 7 15 31 26 10 2 0 0 0 0 0 0 0 0 0 0 0 16 24 28 22 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 23]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 3 0 0 0 2 2 2 2 7 7 7 7 15 15 31 26 10 2 0 0 0 0 0 0 0 0 0 0 16 16 24 28 22 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 122]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 3 0 0 2 2 2 2 7 7 7 7 15 15 15 31 26 10 2 0 0 0 0 0 0 0 0 0 16 16 16 24 28 22 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 91]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 3 0 2 2 2 2 7 7 7 7 15 10 15 15 31 26 10 2 0 0 0 0 0 0 0 0 16 16 16 16 24 28 22 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 65]
+      #|SysEx[112] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 3 0 2 2 2 7 7 7 7 15 15 15 15 31 26 26 10 2 0 0 0 0 0 0 0 16 16 16 16 24 24 28 22 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12]
+      #|SysEx[112] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 3 0 0 2 2 7 7 7 7 15 10 15 15 31 26 26 10 2 0 0 0 0 0 0 0 16 16 16 16 24 24 28 22 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 19]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 1 3 0 0 0 2 7 7 7 7 15 15 15 15 31 26 26 10 10 0 0 0 0 0 0 0 16 16 16 16 24 24 28 22 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 120]
+      #|SysEx[100] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 1 3 0 0 0 0 7 7 7 7 15 15 15 15 31 26 26 10 2 8 29 29 0 0 0 0 16 16 16 16 24 24 28 22 0 16 24 24 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 1 3 0 0 0 0 0 0 7 7 15 15 15 15 31 26 26 10 10 0 0 0 8 0 0 0 16 16 16 16 24 24 28 22 16 0 0 0 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 112]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 1 3 0 0 0 0 0 0 0 7 15 10 15 15 31 26 26 10 10 0 0 0 0 0 0 0 16 16 16 16 24 24 28 22 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 20]
+      #|SysEx[92] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 1 3 0 0 0 0 0 0 0 0 0 15 15 15 31 26 26 10 10 8 8 0 8 29 29 29 8 16 16 16 24 24 28 22 16 16 16 0 16 24 24 24 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 54]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 0 1 3 0 0 0 0 0 0 0 0 0 0 15 15 31 26 26 10 8 0 0 0 0 0 0 0 0 0 16 16 24 24 28 22 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 86]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 1 3 0 0 0 0 0 0 0 0 0 0 0 15 31 26 26 10 8 0 0 0 0 0 0 0 0 0 0 16 24 24 28 22 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 117]
+      #|SysEx[112] len=72 [65 16 69 18 16 1 0 0 0 1 3 0 0 0 0 0 0 0 0 0 0 0 0 31 26 26 10 10 0 8 29 29 29 8 8 0 0 0 0 24 24 28 22 16 0 16 24 24 24 16 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 43]
+      #|SysEx[100] len=72 [65 16 69 18 16 1 0 0 1 3 0 0 0 0 0 0 0 0 0 0 0 0 0 26 26 10 8 0 0 0 0 8 8 29 29 29 29 8 8 24 28 22 16 0 0 0 0 16 16 24 24 24 24 16 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 23]
+      #|SysEx[100] len=72 [65 16 69 18 16 1 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 10 0 0 0 0 0 0 0 0 0 8 8 8 0 0 22 16 0 0 0 0 0 0 0 0 0 16 16 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 106]
+      #|SysEx[100] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 111]
+      #|SysEx[100] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 111]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 8 8 8 8 8 8 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 0 4 4 4 4 4 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 16 16 0 96]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 4 12 12 12 12 12 12 4 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 8 12 12 12 12 12 12 8 16 16 16 16 16 16 16 16 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 16 16 16 16 0 123]
+      #|SysEx[100] len=72 [65 16 69 18 16 1 0 6 12 12 12 12 12 6 6 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 24 28 12 12 12 12 12 24 24 16 16 16 16 16 16 16 0 0 0 1 1 1 1 3 0 0 0 0 0 0 0 0 0 0 0 16 16 16 16 0 67]
+      #|SysEx[100] len=72 [65 16 69 18 16 1 0 7 12 12 12 12 12 6 7 1 0 0 0 0 0 0 1 0 1 1 1 1 1 1 1 24 28 12 12 12 12 12 24 28 16 16 16 16 16 16 16 0 0 0 1 1 1 1 7 0 0 0 0 0 0 0 0 0 0 0 16 16 16 16 0 55]
+      #|SysEx[100] len=72 [65 16 69 18 16 1 0 7 12 12 12 12 12 6 7 1 0 0 0 0 0 0 3 16 1 1 1 1 1 1 1 24 28 12 12 12 12 12 24 30 16 16 16 16 16 16 16 0 0 0 1 1 1 1 15 0 0 0 0 0 0 0 0 0 0 0 16 16 16 16 0 27]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 7 12 12 12 12 12 6 7 1 0 0 4 4 4 4 7 24 9 9 9 9 1 1 1 24 28 12 12 12 12 12 24 31 17 17 17 17 16 16 16 16 16 16 17 17 17 17 31 0 0 0 0 0 0 0 0 0 0 0 16 16 16 16 0 90]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 7 12 12 12 12 12 6 7 1 0 0 12 12 12 12 7 24 13 13 13 13 1 1 1 25 29 13 13 13 13 13 24 31 17 17 17 17 16 16 16 16 16 16 17 17 17 17 31 0 16 16 16 16 0 0 0 0 0 0 16 16 16 16 0 99]
+      #|SysEx[88] len=72 [65 16 69 18 16 1 0 7 12 12 12 12 12 6 7 1 0 0 12 12 12 12 7 24 13 13 13 13 1 1 1 25 29 13 13 13 13 13 24 31 17 17 17 17 16 16 16 16 16 16 17 17 17 17 31 0 16 16 16 16 0 0 0 0 0 0 16 16 16 16 0 99]
+      #|SysEx[224] len=72 [65 16 69 18 16 1 0 7 12 12 12 12 12 6 7 1 0 0 12 12 12 12 7 24 13 13 13 13 1 1 1 25 29 13 13 13 13 13 24 31 17 17 17 17 16 16 16 16 16 16 17 17 17 17 31 0 16 16 16 16 0 0 0 0 0 0 16 16 16 16 0 99]
+      #|SysEx[104] len=72 [65 16 69 18 16 1 0 7 12 12 12 12 12 6 7 1 0 0 12 12 12 12 7 24 13 13 13 13 1 1 1 25 29 13 13 13 13 13 24 31 17 17 17 17 16 16 16 16 16 16 17 17 17 17 31 0 16 16 16 16 0 0 0 0 0 0 16 16 16 16 0 99]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 7 12 12 12 12 12 6 7 1 0 0 12 12 12 12 7 24 13 13 13 13 1 1 1 25 29 13 13 13 13 13 24 31 17 17 17 17 16 16 16 16 16 16 17 17 17 17 31 0 16 16 16 16 0 0 0 0 0 0 16 16 16 16 0 99]
+      #|SysEx[92] len=72 [65 16 69 18 16 1 0 7 12 12 12 12 12 6 7 1 0 0 12 12 12 12 7 24 13 13 13 13 1 1 1 25 29 13 13 13 13 13 24 31 17 17 17 17 16 16 16 16 16 16 17 17 17 17 31 0 16 16 16 16 0 0 0 0 0 0 16 16 16 16 0 99]
+      #|SysEx[184] len=72 [65 16 69 18 16 1 0 23 28 28 28 28 28 22 23 17 16 16 28 28 28 28 23 26 15 15 15 15 3 3 3 27 31 15 15 15 15 15 26 31 17 17 17 17 16 16 16 16 16 16 17 17 17 17 31 0 16 16 16 16 0 0 0 0 0 0 16 16 16 16 0 67]
+      #|SysEx[92] len=72 [65 16 69 18 16 1 0 23 20 20 20 20 20 22 23 17 16 24 20 20 20 20 31 26 14 14 14 14 2 2 2 26 30 15 14 14 14 14 27 31 17 17 17 17 16 16 16 16 16 16 17 17 17 17 31 0 16 16 16 16 0 0 0 0 0 0 16 16 16 16 0 7]
+      #|SysEx[92] len=72 [65 16 69 18 16 1 0 19 16 16 16 16 16 18 19 17 24 24 16 16 16 19 27 26 14 14 14 14 2 2 2 26 31 15 14 14 14 30 27 15 15 1 1 1 1 0 0 0 0 1 1 1 1 15 15 0 16 16 16 16 16 0 0 0 0 16 16 16 16 16 0 97]
+      #|SysEx[92] len=72 [65 16 69 18 16 1 0 19 17 16 18 18 18 19 17 16 30 30 18 18 18 17 25 26 30 14 14 14 2 2 18 26 15 15 14 14 14 30 27 15 7 1 9 9 9 8 0 0 24 25 9 9 9 7 7 0 16 16 16 16 16 0 0 0 0 16 16 16 16 16 0 110]
+      #|SysEx[92] len=72 [65 16 69 18 16 1 0 19 16 16 19 19 19 19 16 16 31 31 19 19 19 16 24 26 30 14 14 14 2 2 18 26 15 15 14 14 14 30 27 15 3 1 13 13 12 12 0 0 28 28 13 13 13 3 3 0 16 16 16 16 0 0 0 0 0 0 16 16 16 16 0 116]
+      #|SysEx[92] len=72 [65 16 69 18 16 1 0 19 16 16 19 19 19 19 16 16 31 31 19 19 19 16 24 26 14 14 30 30 18 18 2 10 31 31 30 30 30 14 11 15 1 1 15 15 14 14 0 0 30 30 15 15 15 1 1 0 16 16 16 16 0 0 0 0 0 0 16 16 16 16 0 40]
+      #|SysEx[92] len=72 [65 16 69 18 16 1 0 19 16 16 19 19 19 19 16 16 31 31 19 19 19 16 24 26 6 6 30 30 26 26 2 2 23 23 22 22 22 6 3 15 0 0 15 15 15 15 0 0 30 30 14 14 14 0 0 0 16 16 16 16 0 0 0 0 0 0 16 16 16 16 0 109]
+      #|SysEx[92] len=72 [65 16 69 18 16 1 0 19 16 16 19 19 19 19 16 16 31 31 19 19 19 16 24 30 2 2 30 30 30 30 6 2 19 19 18 18 18 2 7 15 0 0 15 15 15 15 0 0 30 30 14 14 14 0 0 16 0 0 16 16 16 16 16 0 0 0 0 0 0 0 16 9]
+      #|SysEx[188] len=72 [65 16 69 18 16 1 0 12 15 15 12 12 12 12 15 15 0 0 12 12 12 15 7 1 29 29 1 1 1 1 25 29 12 12 13 13 13 29 24 16 31 31 16 16 16 16 31 31 1 1 17 17 17 31 31 0 16 16 0 0 0 0 0 16 16 16 16 16 16 16 0 5]
+      #|SysEx[224] len=72 [65 16 69 18 16 1 0 12 15 15 12 12 12 12 15 15 0 0 12 12 12 15 7 1 29 29 1 1 1 1 25 29 12 12 13 13 13 29 24 16 31 31 16 16 16 16 31 31 1 1 17 17 17 31 31 0 16 16 0 0 0 0 0 16 16 16 16 16 16 16 0 5]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 12 15 15 12 12 12 12 15 15 0 0 12 12 12 15 7 1 29 29 1 1 1 1 25 29 12 12 13 13 13 29 24 16 31 31 16 16 16 16 31 31 1 1 17 17 17 31 31 0 16 16 0 0 0 0 0 16 16 16 16 16 16 16 0 5]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 12 15 15 12 12 12 12 15 15 0 0 12 12 12 15 7 1 29 29 1 1 1 1 25 29 12 12 13 13 13 29 24 16 31 31 16 16 16 16 31 31 1 1 17 17 17 31 31 0 16 16 0 0 0 0 0 16 16 16 16 16 16 16 0 5]
+      #|SysEx[112] len=72 [65 16 69 18 16 1 0 12 15 15 12 12 12 12 15 15 0 0 12 12 12 15 7 1 29 29 1 1 1 1 25 29 12 12 13 13 13 29 24 16 31 31 16 16 16 16 31 31 1 1 17 17 17 31 31 0 16 16 0 0 0 0 0 16 16 16 16 16 16 16 0 5]
+      #|SysEx[112] len=72 [65 16 69 18 16 1 0 0 12 15 15 12 12 12 12 15 15 0 0 12 12 12 15 0 1 29 29 1 1 1 1 25 29 12 12 13 13 13 29 0 16 31 31 16 16 16 16 31 31 1 1 17 17 17 31 0 0 16 16 0 0 0 0 0 16 16 16 16 16 16 16 67]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 12 15 15 12 12 12 12 15 15 0 0 12 12 12 0 0 1 29 29 1 1 1 1 25 29 12 12 13 13 13 0 0 16 31 31 16 16 16 16 31 31 1 1 17 17 17 0 0 0 16 16 0 0 0 0 0 16 16 16 16 16 16 30]
+      #|SysEx[112] len=72 [65 16 69 18 16 1 0 0 0 0 0 12 15 15 12 12 12 12 15 15 0 0 12 0 0 0 0 1 29 29 1 1 1 1 25 29 12 12 13 0 0 0 0 16 31 31 16 16 16 16 31 31 1 1 17 0 0 0 0 0 16 16 0 0 0 0 0 16 16 16 16 18]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 12 15 15 12 12 12 12 15 15 0 0 0 0 0 0 0 1 29 29 1 1 1 1 25 29 0 0 0 0 0 0 0 16 31 31 16 16 16 16 31 31 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 16 6]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 12 15 15 12 12 12 0 0 0 0 0 0 0 0 0 0 1 29 29 1 1 1 0 0 0 0 0 0 0 0 0 0 16 31 31 16 16 16 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 69]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12 15 15 0 0 0 0 0 0 0 0 0 0 0 0 0 1 29 29 0 0 0 0 0 0 0 0 0 0 0 0 0 16 31 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 28]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 2]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 2]
+      #|SysEx[100] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 2]
+      #|SysEx[108] len=72 [65 16 69 18 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 2]
+      #|Meta[1552] type=47 len=0 []
+      #|------
+      #|Meta[0] type=3 len=8 [67 76 65 82 73 78 69 84]
+      #|ControlChange[524][ch 6] ctrl=121 val=0
+      #|ControlChange[0][ch 6] ctrl=0 val=0
+      #|ControlChange[0][ch 6] ctrl=32 val=0
+      #|ProgramChange[0][ch 6] program=71
+      #|ControlChange[0][ch 6] ctrl=7 val=100
+      #|ControlChange[0][ch 6] ctrl=10 val=64
+      #|ControlChange[0][ch 6] ctrl=91 val=127
+      #|ControlChange[0][ch 6] ctrl=93 val=0
+      #|NoteOn[8644][ch 6] note=55 vel=103
+      #|NoteOff[68][ch 6] note=55 vel=64
+      #|NoteOn[0][ch 6] note=57 vel=77
+      #|NoteOn[64][ch 6] note=59 vel=88
+      #|NoteOff[4][ch 6] note=57 vel=64
+      #|NoteOff[52][ch 6] note=59 vel=64
+      #|NoteOn[0][ch 6] note=60 vel=86
+      #|NoteOn[52][ch 6] note=62 vel=100
+      #|NoteOff[12][ch 6] note=60 vel=64
+      #|NoteOn[44][ch 6] note=64 vel=90
+      #|NoteOff[8][ch 6] note=62 vel=64
+      #|NoteOn[40][ch 6] note=65 vel=80
+      #|NoteOff[4][ch 6] note=64 vel=64
+      #|NoteOn[56][ch 6] note=67 vel=82
+      #|NoteOff[8][ch 6] note=65 vel=64
+      #|NoteOn[44][ch 6] note=69 vel=88
+      #|NoteOff[16][ch 6] note=67 vel=64
+      #|NoteOn[32][ch 6] note=71 vel=79
+      #|NoteOff[4][ch 6] note=69 vel=64
+      #|NoteOn[52][ch 6] note=72 vel=95
+      #|NoteOff[20][ch 6] note=71 vel=64
+      #|NoteOn[36][ch 6] note=74 vel=97
+      #|NoteOff[24][ch 6] note=72 vel=64
+      #|NoteOff[20][ch 6] note=74 vel=64
+      #|NoteOn[12][ch 6] note=76 vel=97
+      #|NoteOn[36][ch 6] note=77 vel=88
+      #|NoteOff[20][ch 6] note=76 vel=64
+      #|NoteOn[36][ch 6] note=79 vel=106
+      #|NoteOff[16][ch 6] note=77 vel=64
+      #|NoteOff[44][ch 6] note=79 vel=64
+      #|Meta[11128] type=47 len=0 []
+      #|------
+      #|Meta[0] type=3 len=10 [83 89 78 66 82 65 83 83 32 50]
+      #|ControlChange[544][ch 7] ctrl=121 val=0
+      #|ControlChange[0][ch 7] ctrl=0 val=0
+      #|ControlChange[0][ch 7] ctrl=32 val=0
+      #|ProgramChange[0][ch 7] program=63
+      #|ControlChange[0][ch 7] ctrl=7 val=100
+      #|ControlChange[0][ch 7] ctrl=10 val=64
+      #|ControlChange[0][ch 7] ctrl=91 val=127
+      #|ControlChange[0][ch 7] ctrl=93 val=0
+      #|NoteOn[6704][ch 7] note=43 vel=88
+      #|NoteOn[0][ch 7] note=60 vel=122
+      #|NoteOn[4][ch 7] note=52 vel=103
+      #|NoteOn[0][ch 7] note=36 vel=90
+      #|NoteOff[1344][ch 7] note=36 vel=64
+      #|NoteOff[16][ch 7] note=43 vel=64
+      #|NoteOff[36][ch 7] note=52 vel=64
+      #|NoteOff[100][ch 7] note=60 vel=64
+      #|NoteOn[36][ch 7] note=53 vel=88
+      #|NoteOn[0][ch 7] note=46 vel=112
+      #|NoteOn[0][ch 7] note=58 vel=118
+      #|NoteOn[4][ch 7] note=62 vel=106
+      #|NoteOff[120][ch 7] note=46 vel=64
+      #|NoteOff[0][ch 7] note=53 vel=64
+      #|NoteOff[12][ch 7] note=62 vel=64
+      #|NoteOff[0][ch 7] note=58 vel=64
+      #|NoteOn[248][ch 7] note=43 vel=79
+      #|NoteOn[0][ch 7] note=52 vel=97
+      #|NoteOn[0][ch 7] note=60 vel=113
+      #|NoteOn[4][ch 7] note=36 vel=88
+      #|NoteOff[712][ch 7] note=36 vel=64
+      #|NoteOff[4][ch 7] note=52 vel=64
+      #|NoteOff[8][ch 7] note=60 vel=64
+      #|NoteOff[12][ch 7] note=43 vel=64
+      #|NoteOn[28][ch 7] note=52 vel=92
+      #|NoteOn[0][ch 7] note=43 vel=74
+      #|NoteOn[4][ch 7] note=60 vel=117
+      #|NoteOn[0][ch 7] note=36 vel=88
+      #|NoteOff[116][ch 7] note=36 vel=64
+      #|NoteOff[8][ch 7] note=52 vel=64
+      #|NoteOff[4][ch 7] note=43 vel=64
+      #|NoteOff[8][ch 7] note=60 vel=64
+      #|NoteOn[628][ch 7] note=46 vel=106
+      #|NoteOn[0][ch 7] note=39 vel=95
+      #|NoteOn[0][ch 7] note=63 vel=126
+      #|NoteOn[4][ch 7] note=58 vel=126
+      #|NoteOn[0][ch 7] note=55 vel=103
+      #|NoteOff[148][ch 7] note=63 vel=64
+      #|NoteOff[4][ch 7] note=46 vel=64
+      #|NoteOff[4][ch 7] note=55 vel=64
+      #|NoteOff[0][ch 7] note=58 vel=64
+      #|NoteOff[0][ch 7] note=39 vel=64
+      #|NoteOn[228][ch 7] note=43 vel=80
+      #|NoteOn[4][ch 7] note=52 vel=95
+      #|NoteOn[0][ch 7] note=60 vel=127
+      #|NoteOn[0][ch 7] note=36 vel=100
+      #|NoteOff[576][ch 7] note=36 vel=64
+      #|NoteOff[20][ch 7] note=43 vel=64
+      #|NoteOff[20][ch 7] note=52 vel=64
+      #|NoteOff[136][ch 7] note=60 vel=64
+      #|NoteOn[8][ch 7] note=63 vel=126
+      #|NoteOn[0][ch 7] note=55 vel=97
+      #|NoteOn[4][ch 7] note=46 vel=112
+      #|NoteOn[0][ch 7] note=39 vel=90
+      #|NoteOff[84][ch 7] note=55 vel=64
+      #|NoteOff[20][ch 7] note=63 vel=64
+      #|NoteOff[4][ch 7] note=39 vel=64
+      #|NoteOff[0][ch 7] note=46 vel=64
+      #|NoteOn[144][ch 7] note=39 vel=95
+      #|NoteOn[0][ch 7] note=46 vel=100
+      #|NoteOn[0][ch 7] note=63 vel=127
+      #|NoteOn[4][ch 7] note=55 vel=92
+      #|NoteOff[44][ch 7] note=46 vel=64
+      #|NoteOff[8][ch 7] note=55 vel=64
+      #|NoteOff[0][ch 7] note=39 vel=64
+      #|NoteOff[20][ch 7] note=63 vel=64
+      #|NoteOn[52][ch 7] note=57 vel=106
+      #|NoteOn[0][ch 7] note=41 vel=109
+      #|NoteOn[4][ch 7] note=48 vel=113
+      #|NoteOn[0][ch 7] note=65 vel=122
+      #|ControlChange[756][ch 7] ctrl=64 val=127
+      #|NoteOff[128][ch 7] note=41 vel=64
+      #|NoteOff[36][ch 7] note=48 vel=64
+      #|NoteOff[44][ch 7] note=57 vel=64
+      #|NoteOff[20][ch 7] note=65 vel=64
+      #|ControlChange[144][ch 7] ctrl=64 val=0
+      #|NoteOn[24][ch 7] note=41 vel=113
+      #|NoteOn[0][ch 7] note=53 vel=126
+      #|ControlChange[1184][ch 7] ctrl=64 val=127
+      #|NoteOff[184][ch 7] note=41 vel=64
+      #|NoteOff[12][ch 7] note=53 vel=64
+      #|NoteOn[152][ch 7] note=41 vel=113
+      #|NoteOn[4][ch 7] note=53 vel=122
+      #|ControlChange[8][ch 7] ctrl=64 val=0
+      #|NoteOff[1448][ch 7] note=53 vel=64
+      #|NoteOff[4][ch 7] note=41 vel=64
+      #|NoteOn[72][ch 7] note=60 vel=117
+      #|NoteOn[0][ch 7] note=65 vel=122
+      #|NoteOn[4][ch 7] note=53 vel=109
+      #|NoteOn[0][ch 7] note=41 vel=106
+      #|NoteOff[1444][ch 7] note=65 vel=64
+      #|NoteOff[16][ch 7] note=53 vel=64
+      #|NoteOff[4][ch 7] note=41 vel=64
+      #|NoteOff[0][ch 7] note=60 vel=64
+      #|NoteOn[68][ch 7] note=65 vel=122
+      #|NoteOn[0][ch 7] note=60 vel=117
+      #|NoteOn[4][ch 7] note=53 vel=109
+      #|NoteOn[0][ch 7] note=41 vel=109
+      #|NoteOff[164][ch 7] note=41 vel=64
+      #|NoteOff[0][ch 7] note=53 vel=64
+      #|NoteOff[4][ch 7] note=60 vel=64
+      #|NoteOff[8][ch 7] note=65 vel=64
+      #|Meta[2940] type=47 len=0 []
+      #|------
+      #|Meta[0] type=3 len=5 [68 82 85 77 83]
+      #|ControlChange[584][ch 9] ctrl=121 val=0
+      #|ControlChange[0][ch 9] ctrl=0 val=0
+      #|ControlChange[0][ch 9] ctrl=32 val=0
+      #|ProgramChange[0][ch 9] program=48
+      #|ControlChange[0][ch 9] ctrl=7 val=100
+      #|ControlChange[0][ch 9] ctrl=10 val=64
+      #|ControlChange[0][ch 9] ctrl=91 val=127
+      #|ControlChange[0][ch 9] ctrl=93 val=0
+      #|NoteOn[572][ch 9] note=57 vel=122
+      #|NoteOn[0][ch 9] note=48 vel=127
+      #|NoteOff[4][ch 9] note=57 vel=64
+      #|NoteOn[0][ch 9] note=40 vel=126
+      #|NoteOn[0][ch 9] note=38 vel=77
+      #|NoteOff[16][ch 9] note=48 vel=64
+      #|NoteOff[4][ch 9] note=38 vel=64
+      #|NoteOff[0][ch 9] note=40 vel=64
+      #|NoteOn[20][ch 9] note=38 vel=77
+      #|NoteOff[28][ch 9] note=38 vel=64
+      #|NoteOn[20][ch 9] note=38 vel=76
+      #|NoteOff[24][ch 9] note=38 vel=64
+      #|NoteOn[24][ch 9] note=38 vel=73
+      #|NoteOff[28][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=71
+      #|NoteOff[32][ch 9] note=38 vel=64
+      #|NoteOn[20][ch 9] note=38 vel=70
+      #|NoteOff[28][ch 9] note=38 vel=64
+      #|NoteOn[20][ch 9] note=38 vel=86
+      #|NoteOff[28][ch 9] note=38 vel=64
+      #|NoteOn[20][ch 9] note=40 vel=117
+      #|NoteOff[76][ch 9] note=40 vel=64
+      #|NoteOn[180][ch 9] note=40 vel=109
+      #|NoteOff[76][ch 9] note=40 vel=64
+      #|NoteOn[52][ch 9] note=40 vel=117
+      #|NoteOff[72][ch 9] note=40 vel=64
+      #|NoteOn[184][ch 9] note=40 vel=113
+      #|NoteOff[76][ch 9] note=40 vel=64
+      #|NoteOn[52][ch 9] note=40 vel=109
+      #|NoteOff[76][ch 9] note=40 vel=64
+      #|NoteOn[52][ch 9] note=38 vel=95
+      #|NoteOff[76][ch 9] note=38 vel=64
+      #|NoteOn[52][ch 9] note=40 vel=109
+      #|NoteOff[76][ch 9] note=40 vel=64
+      #|NoteOn[36][ch 9] note=57 vel=109
+      #|NoteOn[16][ch 9] note=48 vel=127
+      #|NoteOn[0][ch 9] note=40 vel=109
+      #|NoteOff[32][ch 9] note=57 vel=64
+      #|NoteOff[32][ch 9] note=48 vel=64
+      #|NoteOff[12][ch 9] note=40 vel=64
+      #|NoteOn[52][ch 9] note=38 vel=82
+      #|NoteOff[72][ch 9] note=38 vel=64
+      #|NoteOn[56][ch 9] note=40 vel=106
+      #|NoteOff[76][ch 9] note=40 vel=64
+      #|NoteOn[52][ch 9] note=38 vel=62
+      #|NoteOn[0][ch 9] note=40 vel=117
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=57
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=61
+      #|NoteOff[12][ch 9] note=40 vel=64
+      #|NoteOff[4][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=59
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=55
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=55
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=52
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=58
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=58
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=70
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=72
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=74
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=40 vel=113
+      #|NoteOff[76][ch 9] note=40 vel=64
+      #|NoteOn[180][ch 9] note=38 vel=88
+      #|NoteOff[76][ch 9] note=38 vel=64
+      #|NoteOn[52][ch 9] note=43 vel=117
+      #|NoteOn[0][ch 9] note=40 vel=106
+      #|NoteOff[52][ch 9] note=43 vel=64
+      #|NoteOff[24][ch 9] note=40 vel=64
+      #|NoteOn[52][ch 9] note=38 vel=90
+      #|NoteOff[76][ch 9] note=38 vel=64
+      #|NoteOn[52][ch 9] note=43 vel=122
+      #|NoteOn[0][ch 9] note=40 vel=97
+      #|NoteOff[52][ch 9] note=43 vel=64
+      #|NoteOff[24][ch 9] note=40 vel=64
+      #|NoteOn[44][ch 9] note=57 vel=109
+      #|NoteOn[8][ch 9] note=48 vel=127
+      #|NoteOn[4][ch 9] note=40 vel=106
+      #|NoteOff[36][ch 9] note=57 vel=64
+      #|NoteOff[36][ch 9] note=40 vel=64
+      #|NoteOff[20][ch 9] note=48 vel=64
+      #|NoteOn[288][ch 9] note=40 vel=92
+      #|NoteOff[72][ch 9] note=40 vel=64
+      #|NoteOn[52][ch 9] note=40 vel=95
+      #|NoteOff[80][ch 9] note=40 vel=64
+      #|NoteOn[52][ch 9] note=40 vel=95
+      #|NoteOff[76][ch 9] note=40 vel=64
+      #|NoteOn[52][ch 9] note=38 vel=65
+      #|NoteOn[0][ch 9] note=40 vel=100
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=59
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=65
+      #|NoteOff[12][ch 9] note=40 vel=64
+      #|NoteOff[4][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=66
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=66
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=66
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=68
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=73
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=55
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=64
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=67
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=80
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=48 vel=126
+      #|NoteOn[0][ch 9] note=40 vel=95
+      #|NoteOff[68][ch 9] note=48 vel=64
+      #|NoteOff[8][ch 9] note=40 vel=64
+      #|NoteOn[52][ch 9] note=38 vel=77
+      #|NoteOff[72][ch 9] note=38 vel=64
+      #|NoteOn[56][ch 9] note=48 vel=122
+      #|NoteOn[0][ch 9] note=40 vel=90
+      #|NoteOff[72][ch 9] note=48 vel=64
+      #|NoteOff[4][ch 9] note=40 vel=64
+      #|NoteOn[44][ch 9] note=57 vel=113
+      #|NoteOn[8][ch 9] note=43 vel=122
+      #|NoteOn[4][ch 9] note=38 vel=97
+      #|NoteOff[48][ch 9] note=57 vel=64
+      #|NoteOff[12][ch 9] note=43 vel=64
+      #|NoteOff[12][ch 9] note=38 vel=64
+      #|NoteOn[52][ch 9] note=40 vel=92
+      #|NoteOff[76][ch 9] note=40 vel=64
+      #|NoteOn[56][ch 9] note=38 vel=80
+      #|NoteOff[72][ch 9] note=38 vel=64
+      #|NoteOn[52][ch 9] note=43 vel=100
+      #|NoteOn[4][ch 9] note=40 vel=103
+      #|NoteOff[52][ch 9] note=43 vel=64
+      #|NoteOff[20][ch 9] note=40 vel=64
+      #|NoteOn[52][ch 9] note=43 vel=97
+      #|NoteOff[56][ch 9] note=43 vel=64
+      #|NoteOn[72][ch 9] note=38 vel=86
+      #|NoteOn[0][ch 9] note=43 vel=126
+      #|NoteOff[64][ch 9] note=43 vel=64
+      #|NoteOff[8][ch 9] note=38 vel=64
+      #|NoteOn[56][ch 9] note=38 vel=76
+      #|NoteOn[4][ch 9] note=40 vel=97
+      #|NoteOn[0][ch 9] note=43 vel=113
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=73
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=69
+      #|NoteOff[12][ch 9] note=43 vel=64
+      #|NoteOff[0][ch 9] note=40 vel=64
+      #|NoteOff[4][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=65
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=69
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=68
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=68
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=69
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=66
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=67
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=61
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=71
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=90
+      #|NoteOn[0][ch 9] note=43 vel=106
+      #|NoteOff[60][ch 9] note=43 vel=64
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[52][ch 9] note=40 vel=100
+      #|NoteOn[0][ch 9] note=43 vel=100
+      #|NoteOff[44][ch 9] note=43 vel=64
+      #|NoteOff[32][ch 9] note=40 vel=64
+      #|NoteOn[52][ch 9] note=38 vel=86
+      #|NoteOn[0][ch 9] note=43 vel=106
+      #|NoteOff[60][ch 9] note=43 vel=64
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[56][ch 9] note=40 vel=109
+      #|NoteOn[4][ch 9] note=48 vel=126
+      #|NoteOff[68][ch 9] note=48 vel=64
+      #|NoteOff[0][ch 9] note=40 vel=64
+      #|NoteOn[308][ch 9] note=40 vel=100
+      #|NoteOff[76][ch 9] note=40 vel=64
+      #|NoteOn[52][ch 9] note=38 vel=79
+      #|NoteOff[76][ch 9] note=38 vel=64
+      #|NoteOn[52][ch 9] note=40 vel=80
+      #|NoteOff[76][ch 9] note=40 vel=64
+      #|NoteOn[52][ch 9] note=38 vel=92
+      #|NoteOff[76][ch 9] note=38 vel=64
+      #|NoteOn[180][ch 9] note=48 vel=86
+      #|NoteOff[48][ch 9] note=48 vel=64
+      #|NoteOn[56][ch 9] note=57 vel=122
+      #|NoteOn[24][ch 9] note=40 vel=109
+      #|NoteOn[0][ch 9] note=48 vel=126
+      #|NoteOff[32][ch 9] note=57 vel=64
+      #|NoteOff[44][ch 9] note=40 vel=64
+      #|NoteOff[12][ch 9] note=48 vel=64
+      #|NoteOn[168][ch 9] note=38 vel=97
+      #|NoteOff[76][ch 9] note=38 vel=64
+      #|NoteOn[56][ch 9] note=40 vel=127
+      #|NoteOff[96][ch 9] note=40 vel=64
+      #|NoteOn[288][ch 9] note=40 vel=117
+      #|NoteOff[68][ch 9] note=40 vel=64
+      #|NoteOn[56][ch 9] note=38 vel=86
+      #|NoteOff[68][ch 9] note=38 vel=64
+      #|NoteOn[60][ch 9] note=40 vel=113
+      #|NoteOff[64][ch 9] note=40 vel=64
+      #|NoteOn[64][ch 9] note=38 vel=82
+      #|NoteOn[0][ch 9] note=38 vel=122
+      #|NoteOff[1][ch 9] note=38 vel=0
+      #|NoteOff[19][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=77
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=80
+      #|NoteOff[4][ch 9] note=38 vel=64
+      #|NoteOn[28][ch 9] note=38 vel=77
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=76
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=74
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=76
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=76
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=77
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=77
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=82
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=86
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=48 vel=127
+      #|NoteOn[4][ch 9] note=38 vel=74
+      #|NoteOff[12][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=72
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=74
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOff[0][ch 9] note=48 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=76
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=74
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=70
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=71
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=73
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=80
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=77
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=79
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=90
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=127
+      #|NoteOff[52][ch 9] note=38 vel=64
+      #|NoteOn[328][ch 9] note=57 vel=122
+      #|NoteOn[4][ch 9] note=51 vel=127
+      #|NoteOn[4][ch 9] note=40 vel=122
+      #|NoteOff[48][ch 9] note=57 vel=64
+      #|NoteOff[16][ch 9] note=40 vel=64
+      #|NoteOff[12][ch 9] note=51 vel=64
+      #|NoteOn[172][ch 9] note=38 vel=122
+      #|NoteOff[52][ch 9] note=38 vel=64
+      #|NoteOn[80][ch 9] note=38 vel=76
+      #|NoteOn[4][ch 9] note=48 vel=122
+      #|NoteOn[4][ch 9] note=40 vel=126
+      #|NoteOff[8][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=73
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=71
+      #|NoteOff[4][ch 9] note=40 vel=64
+      #|NoteOff[12][ch 9] note=48 vel=64
+      #|NoteOff[4][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=68
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=72
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=65
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=68
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=76
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=76
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=71
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=72
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=74
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[20][ch 9] note=38 vel=76
+      #|NoteOff[12][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=59
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=71
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=63
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=73
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=67
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=72
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=70
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[20][ch 9] note=38 vel=77
+      #|NoteOff[12][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=69
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=80
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=79
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=51 vel=127
+      #|NoteOn[4][ch 9] note=40 vel=127
+      #|NoteOff[68][ch 9] note=40 vel=64
+      #|NoteOff[0][ch 9] note=51 vel=64
+      #|NoteOn[184][ch 9] note=51 vel=127
+      #|NoteOn[4][ch 9] note=38 vel=122
+      #|NoteOff[36][ch 9] note=38 vel=64
+      #|NoteOff[24][ch 9] note=51 vel=64
+      #|NoteOn[64][ch 9] note=38 vel=72
+      #|NoteOn[0][ch 9] note=41 vel=122
+      #|NoteOn[4][ch 9] note=40 vel=127
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=63
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=79
+      #|NoteOff[4][ch 9] note=40 vel=64
+      #|NoteOff[4][ch 9] note=41 vel=64
+      #|NoteOff[12][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=64
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=79
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=66
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=79
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=38 vel=72
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=74
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=74
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=80
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=76
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=59 vel=46
+      #|NoteOn[0][ch 9] note=38 vel=80
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOff[12][ch 9] note=59 vel=64
+      #|NoteOn[4][ch 9] note=38 vel=61
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[0][ch 9] note=57 vel=60
+      #|NoteOn[16][ch 9] note=38 vel=76
+      #|NoteOff[8][ch 9] note=57 vel=64
+      #|NoteOff[12][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=59 vel=52
+      #|NoteOn[0][ch 9] note=38 vel=64
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOff[12][ch 9] note=59 vel=64
+      #|NoteOn[4][ch 9] note=38 vel=74
+      #|NoteOn[16][ch 9] note=57 vel=64
+      #|NoteOff[4][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=38 vel=66
+      #|NoteOff[12][ch 9] note=57 vel=64
+      #|NoteOff[4][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=59 vel=60
+      #|NoteOn[0][ch 9] note=38 vel=74
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOff[12][ch 9] note=59 vel=64
+      #|NoteOn[4][ch 9] note=38 vel=62
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[0][ch 9] note=57 vel=71
+      #|NoteOn[16][ch 9] note=38 vel=71
+      #|NoteOff[12][ch 9] note=57 vel=64
+      #|NoteOff[4][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=59 vel=56
+      #|NoteOn[0][ch 9] note=38 vel=69
+      #|NoteOff[20][ch 9] note=38 vel=64
+      #|NoteOff[8][ch 9] note=59 vel=64
+      #|NoteOn[4][ch 9] note=38 vel=79
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[0][ch 9] note=57 vel=62
+      #|NoteOn[16][ch 9] note=38 vel=72
+      #|NoteOff[12][ch 9] note=57 vel=64
+      #|NoteOff[8][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=59 vel=58
+      #|NoteOn[0][ch 9] note=38 vel=77
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOff[8][ch 9] note=59 vel=64
+      #|NoteOn[8][ch 9] note=38 vel=56
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[0][ch 9] note=57 vel=79
+      #|NoteOn[16][ch 9] note=38 vel=73
+      #|NoteOff[12][ch 9] note=57 vel=64
+      #|NoteOff[4][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=59 vel=71
+      #|NoteOn[0][ch 9] note=38 vel=59
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOff[12][ch 9] note=59 vel=64
+      #|NoteOn[4][ch 9] note=38 vel=82
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[0][ch 9] note=57 vel=77
+      #|NoteOn[12][ch 9] note=38 vel=71
+      #|NoteOff[16][ch 9] note=57 vel=64
+      #|NoteOff[8][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=59 vel=69
+      #|NoteOn[0][ch 9] note=38 vel=92
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOff[12][ch 9] note=59 vel=64
+      #|NoteOn[4][ch 9] note=38 vel=80
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[0][ch 9] note=57 vel=80
+      #|NoteOn[16][ch 9] note=38 vel=97
+      #|NoteOff[12][ch 9] note=57 vel=64
+      #|NoteOff[4][ch 9] note=38 vel=64
+      #|NoteOn[16][ch 9] note=59 vel=72
+      #|NoteOn[0][ch 9] note=38 vel=90
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOff[12][ch 9] note=59 vel=64
+      #|NoteOn[4][ch 9] note=38 vel=109
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[0][ch 9] note=57 vel=97
+      #|NoteOn[16][ch 9] note=38 vel=109
+      #|NoteOff[12][ch 9] note=57 vel=64
+      #|NoteOn[0][ch 9] note=57 vel=113
+      #|NoteOff[8][ch 9] note=38 vel=64
+      #|NoteOn[12][ch 9] note=41 vel=100
+      #|NoteOn[4][ch 9] note=40 vel=122
+      #|NoteOff[24][ch 9] note=57 vel=64
+      #|NoteOff[64][ch 9] note=40 vel=64
+      #|NoteOff[4][ch 9] note=41 vel=64
+      #|NoteOn[288][ch 9] note=41 vel=69
+      #|NoteOn[0][ch 9] note=40 vel=86
+      #|NoteOff[56][ch 9] note=41 vel=64
+      #|NoteOff[12][ch 9] note=40 vel=64
+      #|NoteOn[60][ch 9] note=41 vel=77
+      #|NoteOn[0][ch 9] note=38 vel=77
+      #|NoteOff[52][ch 9] note=41 vel=64
+      #|NoteOff[28][ch 9] note=38 vel=64
+      #|NoteOn[48][ch 9] note=41 vel=92
+      #|NoteOn[0][ch 9] note=40 vel=79
+      #|NoteOff[56][ch 9] note=41 vel=64
+      #|NoteOff[8][ch 9] note=40 vel=64
+      #|NoteOn[64][ch 9] note=41 vel=113
+      #|NoteOn[4][ch 9] note=38 vel=103
+      #|NoteOff[52][ch 9] note=41 vel=64
+      #|NoteOff[28][ch 9] note=38 vel=64
+      #|NoteOn[300][ch 9] note=41 vel=86
+      #|NoteOn[4][ch 9] note=40 vel=79
+      #|NoteOff[52][ch 9] note=41 vel=64
+      #|NoteOff[4][ch 9] note=40 vel=64
+      #|NoteOn[68][ch 9] note=41 vel=88
+      #|NoteOn[4][ch 9] note=38 vel=71
+      #|NoteOff[44][ch 9] note=41 vel=64
+      #|NoteOff[12][ch 9] note=38 vel=64
+      #|NoteOn[68][ch 9] note=41 vel=100
+      #|NoteOn[4][ch 9] note=40 vel=88
+      #|NoteOff[44][ch 9] note=41 vel=64
+      #|NoteOff[16][ch 9] note=40 vel=64
+      #|NoteOn[72][ch 9] note=41 vel=113
+      #|NoteOn[4][ch 9] note=38 vel=106
+      #|NoteOff[48][ch 9] note=41 vel=64
+      #|NoteOff[32][ch 9] note=38 vel=64
+      #|NoteOn[296][ch 9] note=41 vel=90
+      #|NoteOn[0][ch 9] note=40 vel=77
+      #|NoteOff[48][ch 9] note=41 vel=64
+      #|NoteOff[28][ch 9] note=40 vel=64
+      #|NoteOn[52][ch 9] note=41 vel=86
+      #|NoteOn[0][ch 9] note=38 vel=74
+      #|NoteOff[48][ch 9] note=41 vel=64
+      #|NoteOff[28][ch 9] note=38 vel=64
+      #|NoteOn[52][ch 9] note=41 vel=90
+      #|NoteOn[0][ch 9] note=40 vel=76
+      #|NoteOff[48][ch 9] note=41 vel=64
+      #|NoteOff[8][ch 9] note=40 vel=64
+      #|NoteOn[72][ch 9] note=41 vel=97
+      #|NoteOn[0][ch 9] note=38 vel=79
+      #|NoteOff[52][ch 9] note=41 vel=64
+      #|NoteOff[8][ch 9] note=38 vel=64
+      #|NoteOn[68][ch 9] note=41 vel=100
+      #|NoteOn[0][ch 9] note=40 vel=82
+      #|NoteOff[52][ch 9] note=41 vel=64
+      #|NoteOff[16][ch 9] note=40 vel=64
+      #|NoteOn[60][ch 9] note=41 vel=103
+      #|NoteOn[0][ch 9] note=38 vel=88
+      #|NoteOff[44][ch 9] note=41 vel=64
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOn[68][ch 9] note=41 vel=109
+      #|NoteOn[0][ch 9] note=40 vel=103
+      #|NoteOff[52][ch 9] note=41 vel=64
+      #|NoteOff[8][ch 9] note=40 vel=64
+      #|NoteOn[68][ch 9] note=41 vel=106
+      #|NoteOn[4][ch 9] note=38 vel=92
+      #|NoteOff[48][ch 9] note=38 vel=64
+      #|NoteOff[0][ch 9] note=41 vel=64
+      #|NoteOn[76][ch 9] note=41 vel=113
+      #|NoteOn[0][ch 9] note=40 vel=113
+      #|NoteOff[56][ch 9] note=40 vel=64
+      #|NoteOff[0][ch 9] note=41 vel=64
+      #|NoteOn[76][ch 9] note=41 vel=117
+      #|NoteOn[4][ch 9] note=38 vel=126
+      #|NoteOff[52][ch 9] note=41 vel=64
+      #|NoteOff[8][ch 9] note=38 vel=64
+      #|NoteOn[316][ch 9] note=41 vel=109
+      #|NoteOn[4][ch 9] note=40 vel=113
+      #|NoteOff[40][ch 9] note=41 vel=64
+      #|NoteOff[20][ch 9] note=40 vel=64
+      #|NoteOn[64][ch 9] note=41 vel=97
+      #|NoteOn[0][ch 9] note=38 vel=90
+      #|NoteOff[52][ch 9] note=38 vel=64
+      #|NoteOff[0][ch 9] note=41 vel=64
+      #|NoteOn[76][ch 9] note=41 vel=113
+      #|NoteOn[0][ch 9] note=40 vel=117
+      #|NoteOff[48][ch 9] note=41 vel=64
+      #|NoteOff[4][ch 9] note=40 vel=64
+      #|NoteOn[76][ch 9] note=41 vel=117
+      #|NoteOn[0][ch 9] note=38 vel=126
+      #|NoteOff[60][ch 9] note=38 vel=64
+      #|NoteOff[0][ch 9] note=41 vel=64
+      #|NoteOn[332][ch 9] note=41 vel=113
+      #|NoteOn[0][ch 9] note=40 vel=113
+      #|NoteOff[44][ch 9] note=41 vel=64
+      #|NoteOff[8][ch 9] note=40 vel=64
+      #|NoteOn[72][ch 9] note=41 vel=100
+      #|NoteOn[0][ch 9] note=38 vel=103
+      #|NoteOff[48][ch 9] note=38 vel=64
+      #|NoteOff[8][ch 9] note=41 vel=64
+      #|NoteOn[68][ch 9] note=41 vel=117
+      #|NoteOn[4][ch 9] note=40 vel=122
+      #|NoteOff[44][ch 9] note=41 vel=64
+      #|NoteOff[4][ch 9] note=40 vel=64
+      #|NoteOn[56][ch 9] note=57 vel=117
+      #|NoteOn[28][ch 9] note=41 vel=126
+      #|NoteOn[0][ch 9] note=38 vel=122
+      #|NoteOff[28][ch 9] note=57 vel=64
+      #|NoteOff[16][ch 9] note=38 vel=64
+      #|NoteOff[8][ch 9] note=41 vel=64
+      #|Meta[3056] type=47 len=0 []
+      #|------
+      #|Meta[0] type=3 len=8 [71 83 47 82 69 83 69 84]
+      #|SysEx[0] len=9 [65 16 66 18 64 0 127 0 65]
+      #|Meta[6144] type=47 len=0 []
+
+
+
+    ),
+  )
+}
