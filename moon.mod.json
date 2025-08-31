@@ -1,0 +1,10 @@
+{
+  "name": "CAIMEOX/midi",
+  "version": "0.1.0",
+  "readme": "README.md",
+  "repository": "",
+  "license": "Apache-2.0",
+  "keywords": ["midi", "music", "audio", "parser", "writer"],
+  "description": "A MIDI file parser and writer in MoonBit",
+  "source": "src"
+}
