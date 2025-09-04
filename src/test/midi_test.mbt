@@ -16,7 +16,7 @@ test "star wars" {
       #|ControlChange[424][ch 1] ctrl=121 val=0
       #|ControlChange[0][ch 1] ctrl=0 val=0
       #|ControlChange[0][ch 1] ctrl=32 val=0
-      #|ProgramChange[0][ch 1] program=33
+      #|ProgramChange[0][ch 1] program=33: Electric Bass (finger)
       #|ControlChange[0][ch 1] ctrl=7 val=100
       #|ControlChange[0][ch 1] ctrl=10 val=64
       #|ControlChange[0][ch 1] ctrl=91 val=0
@@ -81,7 +81,7 @@ test "star wars" {
       #|ControlChange[444][ch 2] ctrl=121 val=0
       #|ControlChange[0][ch 2] ctrl=0 val=0
       #|ControlChange[0][ch 2] ctrl=32 val=0
-      #|ProgramChange[0][ch 2] program=61
+      #|ProgramChange[0][ch 2] program=61: Brass Section
       #|ControlChange[0][ch 2] ctrl=7 val=100
       #|ControlChange[0][ch 2] ctrl=10 val=60
       #|ControlChange[0][ch 2] ctrl=91 val=127
@@ -328,7 +328,7 @@ test "star wars" {
       #|ControlChange[464][ch 3] ctrl=121 val=0
       #|ControlChange[0][ch 3] ctrl=0 val=0
       #|ControlChange[0][ch 3] ctrl=32 val=0
-      #|ProgramChange[0][ch 3] program=60
+      #|ProgramChange[0][ch 3] program=60: French Horn
       #|ControlChange[0][ch 3] ctrl=7 val=100
       #|ControlChange[0][ch 3] ctrl=10 val=64
       #|ControlChange[0][ch 3] ctrl=91 val=127
@@ -633,7 +633,7 @@ test "star wars" {
       #|ControlChange[484][ch 4] ctrl=121 val=0
       #|ControlChange[0][ch 4] ctrl=0 val=0
       #|ControlChange[0][ch 4] ctrl=32 val=0
-      #|ProgramChange[0][ch 4] program=48
+      #|ProgramChange[0][ch 4] program=48: String Ensemble 1
       #|ControlChange[0][ch 4] ctrl=7 val=100
       #|ControlChange[0][ch 4] ctrl=10 val=64
       #|ControlChange[0][ch 4] ctrl=91 val=127
@@ -691,7 +691,7 @@ test "star wars" {
       #|ControlChange[504][ch 5] ctrl=121 val=0
       #|ControlChange[0][ch 5] ctrl=0 val=0
       #|ControlChange[0][ch 5] ctrl=32 val=0
-      #|ProgramChange[0][ch 5] program=73
+      #|ProgramChange[0][ch 5] program=73: Flute
       #|ControlChange[0][ch 5] ctrl=7 val=100
       #|ControlChange[0][ch 5] ctrl=10 val=64
       #|ControlChange[0][ch 5] ctrl=91 val=127
@@ -936,7 +936,7 @@ test "star wars" {
       #|ControlChange[524][ch 6] ctrl=121 val=0
       #|ControlChange[0][ch 6] ctrl=0 val=0
       #|ControlChange[0][ch 6] ctrl=32 val=0
-      #|ProgramChange[0][ch 6] program=71
+      #|ProgramChange[0][ch 6] program=71: Clarinet
       #|ControlChange[0][ch 6] ctrl=7 val=100
       #|ControlChange[0][ch 6] ctrl=10 val=64
       #|ControlChange[0][ch 6] ctrl=91 val=127
@@ -977,7 +977,7 @@ test "star wars" {
       #|ControlChange[544][ch 7] ctrl=121 val=0
       #|ControlChange[0][ch 7] ctrl=0 val=0
       #|ControlChange[0][ch 7] ctrl=32 val=0
-      #|ProgramChange[0][ch 7] program=63
+      #|ProgramChange[0][ch 7] program=63: Synth Brass 2
       #|ControlChange[0][ch 7] ctrl=7 val=100
       #|ControlChange[0][ch 7] ctrl=10 val=64
       #|ControlChange[0][ch 7] ctrl=91 val=127
@@ -1090,7 +1090,7 @@ test "star wars" {
       #|ControlChange[584][ch 9] ctrl=121 val=0
       #|ControlChange[0][ch 9] ctrl=0 val=0
       #|ControlChange[0][ch 9] ctrl=32 val=0
-      #|ProgramChange[0][ch 9] program=48
+      #|ProgramChange[0][ch 9] program=48: String Ensemble 1
       #|ControlChange[0][ch 9] ctrl=7 val=100
       #|ControlChange[0][ch 9] ctrl=10 val=64
       #|ControlChange[0][ch 9] ctrl=91 val=127

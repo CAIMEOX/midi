@@ -68,7 +68,7 @@ impl Show for Event with to_string(self) -> String {
     ControlChange(delta~, channel~, controller~, value~) =>
       "ControlChange[\{delta}][ch \{channel.to_int()}] ctrl=\{controller.to_int()} val=\{value.to_int()}"
     ProgramChange(delta~, channel~, program~) =>
-      "ProgramChange[\{delta}][ch \{channel.to_int()}] program=\{program.to_int()}"
+      "ProgramChange[\{delta}][ch \{channel.to_int()}] program=\{program.to_int()}: \{program_to_instrument(program)}"
     Aftertouch(delta~, channel~, value~) =>
       "Aftertouch[\{delta}][ch \{channel.to_int()}] value=\{value.to_int()}"
     PolyTouch(delta~, channel~, note~, value~) =>
