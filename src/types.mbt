@@ -62,13 +62,13 @@ pub(all) enum Event {
 impl Show for Event with to_string(self) -> String {
   match self {
     NoteOn(delta~, channel~, note~, velocity~) =>
-      "NoteOn[\{delta}][ch \{channel.to_int()}] note=\{note.to_int()} vel=\{velocity.to_int()}"
+      "NoteOn[\{delta}][ch \{channel.to_int()}] note=\{note.to_int()}(\{note_to_pitch(note)}) vel=\{velocity.to_int()}"
     NoteOff(delta~, channel~, note~, velocity~) =>
-      "NoteOff[\{delta}][ch \{channel.to_int()}] note=\{note.to_int()} vel=\{velocity.to_int()}"
+      "NoteOff[\{delta}][ch \{channel.to_int()}] note=\{note.to_int()}(\{note_to_pitch(note)}) vel=\{velocity.to_int()}"
     ControlChange(delta~, channel~, controller~, value~) =>
       "ControlChange[\{delta}][ch \{channel.to_int()}] ctrl=\{controller.to_int()} val=\{value.to_int()}"
     ProgramChange(delta~, channel~, program~) =>
-      "ProgramChange[\{delta}][ch \{channel.to_int()}] program=\{program.to_int()}"
+      "ProgramChange[\{delta}][ch \{channel.to_int()}] program=\{program.to_int()}: \{program_to_instrument(program)}"
     Aftertouch(delta~, channel~, value~) =>
       "Aftertouch[\{delta}][ch \{channel.to_int()}] value=\{value.to_int()}"
     PolyTouch(delta~, channel~, note~, value~) =>
