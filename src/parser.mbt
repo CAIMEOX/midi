@@ -196,7 +196,47 @@ fn parse_event(state : ParserState) -> Event raise ParseError {
           let meta_type = read_byte(state)
           let length = read_variable_int(state)
           let data = read_bytes(state, length.reinterpret_as_int())
-          Meta(delta~, meta_type~, data~)
+          match meta_type{
+            0x51 => {
+              // Tempo: 3 bytes of microseconds per quarter note
+              if data.length() != 3 {
+                raise InvalidData("Tempo data must be 3 bytes")
+              }
+              let microseconds : UInt = (data[0].to_uint() << 16) | 
+                                (data[1].to_uint() << 8) | 
+                                data[2].to_uint()
+              Tempo(delta~, microseconds~)
+            }
+            0x58 => {
+              // Time Signature: 4 bytes
+              if data.length() != 4 {
+                raise InvalidData("Time signature data must be 4 bytes")
+              }
+              let numerator = data[0]
+              let denominator_power = data[1]
+              let denominator = (1 << denominator_power.to_int()).to_byte()
+              let clocks_per_beat = data[2]
+              let thirty_seconds_per_quarter = data[3]
+              TimeSignature(
+                delta~,
+                numerator~,
+                denominator~,
+                clocks_per_beat~,
+                thirty_seconds_per_quarter~,
+              )
+            }
+            0x59 => {
+              // Key Signature: 2 bytes
+              if data.length() != 2 {
+                raise InvalidData("Key signature data must be 2 bytes")
+              }
+              let sf = data[0]
+              let mi = data[1]
+              KeySignature(delta~, sf~, mi~)
+            }
+            _ => Meta(delta~, meta_type~, data~)
+          }
+          
         }
         _ => raise UnknownEventType
       }

@@ -49,7 +49,7 @@ pub(all) enum Event {
   PolyTouch(delta~ : UInt, channel~ : Byte, note~ : Byte, value~ : Byte)
   PitchWheel(delta~ : UInt, channel~ : Byte, pitch~ : Int)
   Tempo(delta~ : UInt, microseconds~ : UInt)  // 0x51
-  TimeSignature(delta~ : UInt, numerator~ : Byte, denominator~ : Byte, clocks_per_click~ : Byte, thirty_seconds_per_quarter~ : Byte)  // 0x58
+  TimeSignature(delta~ : UInt, numerator~ : Byte, denominator~ : Byte, clocks_per_beat~ : Byte, thirty_seconds_per_quarter~ : Byte)  // 0x58
   KeySignature(delta~ : UInt, sf~ : Byte, mi~ : Byte)  // 0x59
   Meta(delta~ : UInt, meta_type~ : Byte, data~ : Array[Byte])
   SysEx(delta~ : UInt, data~ : Array[Byte])
@@ -80,10 +80,10 @@ impl Show for Event with to_string(self) -> String {
       "PitchWheel[\{delta}][ch \{channel.to_int()}] pitch=\{pitch}"
     Tempo(delta~, microseconds~) =>
       "Tempo[\{delta}] microseconds=\{microseconds}"
-    TimeSignature(delta~, numerator~, denominator~, clocks_per_click~, thirty_seconds_per_quarter~) =>
-      "TimeSignature[\{delta}] numerator=\{numerator} denominator=\{denominator} clocks_per_tick=\{clocks_per_click} thirty_seconds_per_quarter=\{thirty_seconds_per_quarter}"
+    TimeSignature(delta~, numerator~, denominator~, clocks_per_beat~, thirty_seconds_per_quarter~) =>
+      "TimeSignature[\{delta}] numerator=\{numerator} denominator=\{denominator} clocks_per_tick=\{clocks_per_beat} thirty_seconds_per_quarter=\{thirty_seconds_per_quarter}"
     KeySignature(delta~, sf~, mi~) =>
-      "KeySignature[\{delta}] sf=\{sf} mi=\{mi}"
+      "KeySignature[\{delta}] sharp_flat=\{sf} mi=\{mi}"
     Meta(delta~, meta_type~, data~) => {
       let bytes_str = data.map(fn(b) { b.to_int().to_string() }).join(" ")
       "Meta[\{delta}] type=\{meta_type.to_int()} len=\{data.length()} [\{bytes_str}]"
