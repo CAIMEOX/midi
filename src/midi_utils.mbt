@@ -319,3 +319,7 @@ pub fn note_to_pitch(note: Byte) -> String {
         _ => "Unknown"
     }
 }
+
+pub fn microseconds_to_bpm(microseconds: UInt) -> Double {
+    60000000.0 / microseconds.to_double()
+}

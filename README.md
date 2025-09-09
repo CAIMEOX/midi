@@ -84,8 +84,8 @@ fn demo(bytes: Bytes) raise @midi.ParseError {
 
 ## Roadmap Ideas
 
-- Helper constructors & decoders for tempo (0x51), time signature (0x58), key signature (0x59)
-- Tempo & tick-to-time utilities
+<!-- - Helper constructors & decoders for tempo (0x51), time signature (0x58), key signature (0x59) -->
+- Tick-to-time utilities
 - Event builder DSL
 - Track manipulation helpers (merge, filter, quantize)
 - Event iteration utilities (by type, by channel, by time range)
