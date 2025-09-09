@@ -77,7 +77,7 @@ fn write_chunk_header(
 
 ///|
 /// Serialize a MIDI event to bytes
-fn serialize_event(
+fn  serialize_event(
   state : WriterState,
   event : Event,
   use_running_status : Bool,
@@ -147,6 +147,25 @@ fn serialize_event(
       write_byte(state, ((adjusted_pitch >> 7) & 0x7F).to_byte()) // MSB
       status.to_byte()
     }
+    Tempo(delta~, microseconds~) => {
+      write_byte(state, b'\xFF')
+      write_byte(state, b'\x51')
+      write_byte(state, b'\x03')
+      
+      write_byte(state, ((microseconds >> 16) & 0xFF).to_byte())
+      write_byte(state, ((microseconds >> 8) & 0xFF).to_byte())
+      write_byte(state, (microseconds & 0xFF).to_byte())
+
+      b'\xFF'
+    }
+    TimeSignature(delta~, numerator~, denominator~, clocks_per_beat~, thirty_seconds_per_quarter~) => {
+      // TODO
+      b'\xFF'
+    }
+    KeySignature(delta~, sf~, mi~) => {
+      // TODO
+      b'\xFF'
+    }
     SysEx(data~, ..) => {
       write_byte(state, b'\xF0')
       write_variable_int(state, (data.length() + 1).reinterpret_as_uint()) // +1 for end byte
@@ -199,6 +218,9 @@ fn Event::delta(self : Event) -> UInt {
     | ProgramChange(delta~, ..)
     | Aftertouch(delta~, ..)
     | PitchWheel(delta~, ..)
+    | Tempo(delta~, ..)
+    | TimeSignature(delta~, ..)
+    | KeySignature(delta~, ..)
     | SysEx(delta~, ..)
     | Clock(delta~)
     | Start(delta~)

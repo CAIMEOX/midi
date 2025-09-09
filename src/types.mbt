@@ -79,11 +79,11 @@ impl Show for Event with to_string(self) -> String {
     PitchWheel(delta~, channel~, pitch~) =>
       "PitchWheel[\{delta}][ch \{channel.to_int()}] pitch=\{pitch}"
     Tempo(delta~, microseconds~) =>
-      "Tempo[\{delta}] microseconds=\{microseconds}"
+      "Tempo[\{delta}] microseconds=\{microseconds} (\{microseconds_to_bpm(microseconds)} BPM)"
     TimeSignature(delta~, numerator~, denominator~, clocks_per_beat~, thirty_seconds_per_quarter~) =>
-      "TimeSignature[\{delta}] numerator=\{numerator} denominator=\{denominator} clocks_per_tick=\{clocks_per_beat} thirty_seconds_per_quarter=\{thirty_seconds_per_quarter}"
+      "TimeSignature[\{delta}] numerator=\{numerator.to_int()} denominator=\{denominator.to_int()} clocks_per_tick=\{clocks_per_beat.to_int()} thirty_seconds_per_quarter=\{thirty_seconds_per_quarter.to_int()}"
     KeySignature(delta~, sf~, mi~) =>
-      "KeySignature[\{delta}] sharp_flat=\{sf} mi=\{mi}"
+      "KeySignature[\{delta}] sharp_flat=\{sf.to_int()} mi=\{mi.to_int()}"
     Meta(delta~, meta_type~, data~) => {
       let bytes_str = data.map(fn(b) { b.to_int().to_string() }).join(" ")
       "Meta[\{delta}] type=\{meta_type.to_int()} len=\{data.length()} [\{bytes_str}]"
