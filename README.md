@@ -31,6 +31,9 @@ Event =>
 | Aftertouch(delta, channel, value)
 | PolyTouch(delta, channel, note, value)
 | PitchWheel(delta, channel, pitch)          // signed 14-bit centered at 0
+| Tempo(delta~ : UInt, microseconds~ : UInt)  // 0x51, in microseconds
+| TimeSignature(delta~ : UInt, numerator~ : Byte, denominator~ : Byte, clocks_per_beat~ : Byte, thirty_seconds_per_quarter~ : Byte)  // 0x58, denominator is log(2)D
+| KeySignature(delta~ : UInt, sf~ : Byte, mi~ : Byte)  // 0x59, sharp/flat and major/minor
 | Meta(delta, meta_type, data[])             // raw meta payload
 | SysEx(delta, data[])                       // payload (without trailing F7)
 | Clock | Start | Continue | Stop | ActiveSensing | Reset
@@ -97,3 +100,4 @@ PRs & issues welcome. Please include tests for parsing / serialization changes.
 ## License
 
 Apache-2.0 © CAIMEOX
+Apache-2.0 © Elevonic611
