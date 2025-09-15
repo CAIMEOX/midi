@@ -7,9 +7,9 @@ test "star wars" {
       #|format=1
       #|division=384
       #|tracks:10
-      #|Meta[0] type=88 len=4 [3 2 24 8]
-      #|Meta[0] type=81 len=3 [7 83 0]
-      #|Meta[1152] type=88 len=4 [4 2 24 8]
+      #|TimeSignature[0] numerator=3 denominator=4 clocks_per_tick=24 thirty_seconds_per_quarter=8
+      #|Tempo[0] microseconds=480000 (125 BPM)
+      #|TimeSignature[1152] numerator=4 denominator=4 clocks_per_tick=24 thirty_seconds_per_quarter=8
       #|Meta[19968] type=47 len=0 []
       #|------
       #|Meta[0] type=3 len=10 [70 73 78 71 69 82 68 66 65 83]
@@ -21,7 +21,7 @@ test "star wars" {
       #|ControlChange[0][ch 1] ctrl=10 val=64
       #|ControlChange[0][ch 1] ctrl=91 val=0
       #|ControlChange[0][ch 1] ctrl=93 val=0
-            #|NoteOn[12968][ch 1] note=53(F3) vel=122
+      #|NoteOn[12968][ch 1] note=53(F3) vel=122
       #|NoteOff[292][ch 1] note=53(F3) vel=64
       #|NoteOn[92][ch 1] note=53(F3) vel=103
       #|NoteOff[52][ch 1] note=53(F3) vel=64
