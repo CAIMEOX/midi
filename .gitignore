@@ -2,7 +2,6 @@
 target/
 .mooncakes/
 .moonagent/
-**.mid
 
 .vscode
 .vscode/
