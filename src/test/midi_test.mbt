@@ -1,9 +1,7 @@
 ///|
 test "star wars" {
   let data = @midi.parse(resource)
-  inspect(
-    data,
-    content=(
+  let expected = (
       #|format=1
       #|division=384
       #|tracks:10
@@ -1664,6 +1662,9 @@ test "star wars" {
       #|Meta[0] type=3 len=8 [71 83 47 82 69 83 69 84]
       #|SysEx[0] len=9 [65 16 66 18 64 0 127 0 65]
       #|Meta[6144] type=47 len=0 []
-    ),
+  )
+  inspect(
+    data,
+    content=expected,
   )
 }

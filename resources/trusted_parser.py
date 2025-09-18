@@ -1,6 +1,7 @@
 import mido
 from mido import MidiFile, MidiTrack, Message, MetaMessage
 import os
+import sys
 
 def read_midi_file(filename):
     """
@@ -14,26 +15,32 @@ def read_midi_file(filename):
         list: List of all messages from all tracks
     """
     try:
+        original_stdout = sys.stdout
         # Load the MIDI file using mido
         midi_file = MidiFile(filename)
         
         messages = []
         
-        print(f"MIDI File Information:")
-        print(f"  Type: {midi_file.type}")
-        print(f"  Ticks per beat: {midi_file.ticks_per_beat}")
-        print(f"  Length: {midi_file.length} seconds")
-        print(f"  Number of tracks: {len(midi_file.tracks)}")
-        print()
+        # print(f"MIDI File Information:")
+        # print(f"  Type: {midi_file.type}")
+        # print(f"  Ticks per beat: {midi_file.ticks_per_beat}")
+        # print(f"  Length: {midi_file.length} seconds")
+        # print(f"  Number of tracks: {len(midi_file.tracks)}")
+        # print()
         
-        # Extract all messages from all tracks
-        for i, track in enumerate(midi_file.tracks):
-            print(f"Track {i} ({len(track)} messages):")
-            for msg in track:
-                messages.append(msg)
-                print(f"  {msg}")
-            print()
-        
+        with open('from_py.txt', 'w') as f:
+            sys.stdout = f
+            # Extract all messages from all tracks
+            for i, track in enumerate(midi_file.tracks):
+                # print(f"Track {i} ({len(track)} messages):")
+                for msg in track:
+                    messages.append(msg)
+                    print(f"{msg}")
+                if i < len(midi_file.tracks) - 1:
+                    print("------")
+
+        sys.stdout = original_stdout
+
         return midi_file, messages
         
     except Exception as e:
@@ -158,7 +165,7 @@ def analyze_midi_file(midi_file):
 # Example usage
 if __name__ == "__main__":
     # Example 1: Read MIDI file from disk
-    filename = "raw_my_music.mid"  # Replace with your MIDI file path
+    filename = "star_wars.mid"  # Replace with your MIDI file path
     if os.path.exists(filename):
         midi_file, messages = read_midi_file(filename)
         if midi_file:
