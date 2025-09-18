@@ -2,7 +2,10 @@
 target/
 .mooncakes/
 .moonagent/
-**.mid
 
 .vscode
 .vscode/
+
+resources/__pycache__
+resources/__pycache__/
+resources/from_py.txt
