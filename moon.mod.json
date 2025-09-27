@@ -2,7 +2,7 @@
   "name": "CAIMEOX/midi",
   "version": "0.1.0",
   "deps": {
-    // "Kaida-Amethyst/python": "0.1.4"
+    "Kaida-Amethyst/python": "0.1.4"
   },
   "readme": "README.md",
   "repository": "https://github.com/CAIMEOX/midi",
