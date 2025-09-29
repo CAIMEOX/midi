@@ -123,6 +123,7 @@ def ref_test(mbt_parsed_text, file_name):
 # print("Trusted version: ")
 # midi_file, messages = trusted_parser.read_midi_file("star_wars.mid")
 
+
 with open("moon_test_expected.txt", "r") as file:
     mbt_parsed_test = file.read()
 

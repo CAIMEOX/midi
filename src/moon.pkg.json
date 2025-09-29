@@ -1,9 +1,10 @@
 {
-    "import": [
-        "Kaida-Amethyst/python"
-    ],
-
     "targets": {
         "*.mbt": ["native"]
     }
+
+    // "import": [
+    //     "Kaida-Amethyst/python"
+    // ]
+
 }
