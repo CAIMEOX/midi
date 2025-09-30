@@ -1,325 +1,326 @@
-pub fn program_to_instrument(program : Byte) -> String{
-    match program {
-        // Piano
-        0 => "Acoustic Grand Piano"
-        1 => "Bright Acoustic Piano"
-        2 => "Electric Grand Piano"
-        3 => "Honky-tonk Piano"
-        4 => "Electric Piano 1"
-        5 => "Electric Piano 2"
-        6 => "Harpsichord"
-        7 => "Clavinet"
-        
-        // Chromatic Percussion
-        8 => "Celesta"
-        9 => "Glockenspiel"
-        10 => "Music Box"
-        11 => "Vibraphone"
-        12 => "Marimba"
-        13 => "Xylophone"
-        14 => "Tubular Bells"
-        15 => "Dulcimer"
-        
-        // Organ
-        16 => "Drawbar Organ"
-        17 => "Percussive Organ"
-        18 => "Rock Organ"
-        19 => "Church Organ"
-        20 => "Reed Organ"
-        21 => "Accordion"
-        22 => "Harmonica"
-        23 => "Tango Accordion"
-        
-        // Guitar
-        24 => "Acoustic Guitar (nylon)"
-        25 => "Acoustic Guitar (steel)"
-        26 => "Electric Guitar (jazz)"
-        27 => "Electric Guitar (clean)"
-        28 => "Electric Guitar (muted)"
-        29 => "Overdriven Guitar"
-        30 => "Distortion Guitar"
-        31 => "Guitar Harmonics"
-        
-        // Bass
-        32 => "Acoustic Bass"
-        33 => "Electric Bass (finger)"
-        34 => "Electric Bass (pick)"
-        35 => "Fretless Bass"
-        36 => "Slap Bass 1"
-        37 => "Slap Bass 2"
-        38 => "Synth Bass 1"
-        39 => "Synth Bass 2"
-        
-        // Strings
-        40 => "Violin"
-        41 => "Viola"
-        42 => "Cello"
-        43 => "Contrabass"
-        44 => "Tremolo Strings"
-        45 => "Pizzicato Strings"
-        46 => "Orchestral Harp"
-        47 => "Timpani"
-        
-        // Ensemble
-        48 => "String Ensemble 1"
-        49 => "String Ensemble 2"
-        50 => "Synth Strings 1"
-        51 => "Synth Strings 2"
-        52 => "Choir Aahs"
-        53 => "Voice Oohs"
-        54 => "Synth Voice"
-        55 => "Orchestra Hit"
-        
-        // Brass
-        56 => "Trumpet"
-        57 => "Trombone"
-        58 => "Tuba"
-        59 => "Muted Trumpet"
-        60 => "French Horn"
-        61 => "Brass Section"
-        62 => "Synth Brass 1"
-        63 => "Synth Brass 2"
-        
-        // Reed
-        64 => "Soprano Sax"
-        65 => "Alto Sax"
-        66 => "Tenor Sax"
-        67 => "Baritone Sax"
-        68 => "Oboe"
-        69 => "English Horn"
-        70 => "Bassoon"
-        71 => "Clarinet"
-        
-        // Pipe
-        72 => "Piccolo"
-        73 => "Flute"
-        74 => "Recorder"
-        75 => "Pan Flute"
-        76 => "Blown Bottle"
-        77 => "Shakuhachi"
-        78 => "Whistle"
-        79 => "Ocarina"
-        
-        // Synth Lead
-        80 => "Lead 1 (square)"
-        81 => "Lead 2 (sawtooth)"
-        82 => "Lead 3 (calliope)"
-        83 => "Lead 4 (chiff)"
-        84 => "Lead 5 (charang)"
-        85 => "Lead 6 (voice)"
-        86 => "Lead 7 (fifths)"
-        87 => "Lead 8 (bass + lead)"
-        
-        // Synth Pad
-        88 => "Pad 1 (new age)"
-        89 => "Pad 2 (warm)"
-        90 => "Pad 3 (polysynth)"
-        91 => "Pad 4 (choir)"
-        92 => "Pad 5 (bowed)"
-        93 => "Pad 6 (metallic)"
-        94 => "Pad 7 (halo)"
-        95 => "Pad 8 (sweep)"
-        
-        // Synth Effects
-        96 => "FX 1 (rain)"
-        97 => "FX 2 (soundtrack)"
-        98 => "FX 3 (crystal)"
-        99 => "FX 4 (atmosphere)"
-        100 => "FX 5 (brightness)"
-        101 => "FX 6 (goblins)"
-        102 => "FX 7 (echoes)"
-        103 => "FX 8 (sci-fi)"
-        
-        // Ethnic
-        104 => "Sitar"
-        105 => "Banjo"
-        106 => "Shamisen"
-        107 => "Koto"
-        108 => "Kalimba"
-        109 => "Bagpipe"
-        110 => "Fiddle"
-        111 => "Shanai"
-        
-        // Percussive
-        112 => "Tinkle Bell"
-        113 => "Agogo"
-        114 => "Steel Drums"
-        115 => "Woodblock"
-        116 => "Taiko Drum"
-        117 => "Melodic Tom"
-        118 => "Synth Drum"
-        119 => "Reverse Cymbal"
-        
-        // Sound Effects
-        120 => "Guitar Fret Noise"
-        121 => "Breath Noise"
-        122 => "Seashore"
-        123 => "Bird Tweet"
-        124 => "Telephone Ring"
-        125 => "Helicopter"
-        126 => "Applause"
-        127 => "Gunshot"
-        
-        _ => "Unknown"
-    }
+///|
+pub fn program_to_instrument(program : Byte) -> String {
+  match program {
+    // Piano
+    0 => "Acoustic Grand Piano"
+    1 => "Bright Acoustic Piano"
+    2 => "Electric Grand Piano"
+    3 => "Honky-tonk Piano"
+    4 => "Electric Piano 1"
+    5 => "Electric Piano 2"
+    6 => "Harpsichord"
+    7 => "Clavinet"
+
+    // Chromatic Percussion
+    8 => "Celesta"
+    9 => "Glockenspiel"
+    10 => "Music Box"
+    11 => "Vibraphone"
+    12 => "Marimba"
+    13 => "Xylophone"
+    14 => "Tubular Bells"
+    15 => "Dulcimer"
+
+    // Organ
+    16 => "Drawbar Organ"
+    17 => "Percussive Organ"
+    18 => "Rock Organ"
+    19 => "Church Organ"
+    20 => "Reed Organ"
+    21 => "Accordion"
+    22 => "Harmonica"
+    23 => "Tango Accordion"
+
+    // Guitar
+    24 => "Acoustic Guitar (nylon)"
+    25 => "Acoustic Guitar (steel)"
+    26 => "Electric Guitar (jazz)"
+    27 => "Electric Guitar (clean)"
+    28 => "Electric Guitar (muted)"
+    29 => "Overdriven Guitar"
+    30 => "Distortion Guitar"
+    31 => "Guitar Harmonics"
+
+    // Bass
+    32 => "Acoustic Bass"
+    33 => "Electric Bass (finger)"
+    34 => "Electric Bass (pick)"
+    35 => "Fretless Bass"
+    36 => "Slap Bass 1"
+    37 => "Slap Bass 2"
+    38 => "Synth Bass 1"
+    39 => "Synth Bass 2"
+
+    // Strings
+    40 => "Violin"
+    41 => "Viola"
+    42 => "Cello"
+    43 => "Contrabass"
+    44 => "Tremolo Strings"
+    45 => "Pizzicato Strings"
+    46 => "Orchestral Harp"
+    47 => "Timpani"
+
+    // Ensemble
+    48 => "String Ensemble 1"
+    49 => "String Ensemble 2"
+    50 => "Synth Strings 1"
+    51 => "Synth Strings 2"
+    52 => "Choir Aahs"
+    53 => "Voice Oohs"
+    54 => "Synth Voice"
+    55 => "Orchestra Hit"
+
+    // Brass
+    56 => "Trumpet"
+    57 => "Trombone"
+    58 => "Tuba"
+    59 => "Muted Trumpet"
+    60 => "French Horn"
+    61 => "Brass Section"
+    62 => "Synth Brass 1"
+    63 => "Synth Brass 2"
+
+    // Reed
+    64 => "Soprano Sax"
+    65 => "Alto Sax"
+    66 => "Tenor Sax"
+    67 => "Baritone Sax"
+    68 => "Oboe"
+    69 => "English Horn"
+    70 => "Bassoon"
+    71 => "Clarinet"
+
+    // Pipe
+    72 => "Piccolo"
+    73 => "Flute"
+    74 => "Recorder"
+    75 => "Pan Flute"
+    76 => "Blown Bottle"
+    77 => "Shakuhachi"
+    78 => "Whistle"
+    79 => "Ocarina"
+
+    // Synth Lead
+    80 => "Lead 1 (square)"
+    81 => "Lead 2 (sawtooth)"
+    82 => "Lead 3 (calliope)"
+    83 => "Lead 4 (chiff)"
+    84 => "Lead 5 (charang)"
+    85 => "Lead 6 (voice)"
+    86 => "Lead 7 (fifths)"
+    87 => "Lead 8 (bass + lead)"
+
+    // Synth Pad
+    88 => "Pad 1 (new age)"
+    89 => "Pad 2 (warm)"
+    90 => "Pad 3 (polysynth)"
+    91 => "Pad 4 (choir)"
+    92 => "Pad 5 (bowed)"
+    93 => "Pad 6 (metallic)"
+    94 => "Pad 7 (halo)"
+    95 => "Pad 8 (sweep)"
+
+    // Synth Effects
+    96 => "FX 1 (rain)"
+    97 => "FX 2 (soundtrack)"
+    98 => "FX 3 (crystal)"
+    99 => "FX 4 (atmosphere)"
+    100 => "FX 5 (brightness)"
+    101 => "FX 6 (goblins)"
+    102 => "FX 7 (echoes)"
+    103 => "FX 8 (sci-fi)"
+
+    // Ethnic
+    104 => "Sitar"
+    105 => "Banjo"
+    106 => "Shamisen"
+    107 => "Koto"
+    108 => "Kalimba"
+    109 => "Bagpipe"
+    110 => "Fiddle"
+    111 => "Shanai"
+
+    // Percussive
+    112 => "Tinkle Bell"
+    113 => "Agogo"
+    114 => "Steel Drums"
+    115 => "Woodblock"
+    116 => "Taiko Drum"
+    117 => "Melodic Tom"
+    118 => "Synth Drum"
+    119 => "Reverse Cymbal"
+
+    // Sound Effects
+    120 => "Guitar Fret Noise"
+    121 => "Breath Noise"
+    122 => "Seashore"
+    123 => "Bird Tweet"
+    124 => "Telephone Ring"
+    125 => "Helicopter"
+    126 => "Applause"
+    127 => "Gunshot"
+    _ => "Unknown"
+  }
 }
 
-pub fn note_to_pitch(note: Byte) -> String {
-    match note {
-        // Octave -1 (0-11)
-        0 => "C-1"
-        1 => "C#-1"
-        2 => "D-1"
-        3 => "D#-1"
-        4 => "E-1"
-        5 => "F-1"
-        6 => "F#-1"
-        7 => "G-1"
-        8 => "G#-1"
-        9 => "A-1"
-        10 => "A#-1"
-        11 => "B-1"
-        
-        // Octave 0 (12-23)
-        12 => "C0"
-        13 => "C#0"
-        14 => "D0"
-        15 => "D#0"
-        16 => "E0"
-        17 => "F0"
-        18 => "F#0"
-        19 => "G0"
-        20 => "G#0"
-        21 => "A0"
-        22 => "A#0"
-        23 => "B0"
-        
-        // Octave 1 (24-35)
-        24 => "C1"
-        25 => "C#1"
-        26 => "D1"
-        27 => "D#1"
-        28 => "E1"
-        29 => "F1"
-        30 => "F#1"
-        31 => "G1"
-        32 => "G#1"
-        33 => "A1"
-        34 => "A#1"
-        35 => "B1"
-        
-        // Octave 2 (36-47)
-        36 => "C2"
-        37 => "C#2"
-        38 => "D2"
-        39 => "D#2"
-        40 => "E2"
-        41 => "F2"
-        42 => "F#2"
-        43 => "G2"
-        44 => "G#2"
-        45 => "A2"
-        46 => "A#2"
-        47 => "B2"
-        
-        // Octave 3 (48-59)
-        48 => "C3"
-        49 => "C#3"
-        50 => "D3"
-        51 => "D#3"
-        52 => "E3"
-        53 => "F3"
-        54 => "F#3"
-        55 => "G3"
-        56 => "G#3"
-        57 => "A3"
-        58 => "A#3"
-        59 => "B3"
-        
-        // Octave 4 (60-71) - Middle C is C4
-        60 => "C4"
-        61 => "C#4"
-        62 => "D4"
-        63 => "D#4"
-        64 => "E4"
-        65 => "F4"
-        66 => "F#4"
-        67 => "G4"
-        68 => "G#4"
-        69 => "A4"
-        70 => "A#4"
-        71 => "B4"
-        
-        // Octave 5 (72-83)
-        72 => "C5"
-        73 => "C#5"
-        74 => "D5"
-        75 => "D#5"
-        76 => "E5"
-        77 => "F5"
-        78 => "F#5"
-        79 => "G5"
-        80 => "G#5"
-        81 => "A5"
-        82 => "A#5"
-        83 => "B5"
-        
-        // Octave 6 (84-95)
-        84 => "C6"
-        85 => "C#6"
-        86 => "D6"
-        87 => "D#6"
-        88 => "E6"
-        89 => "F6"
-        90 => "F#6"
-        91 => "G6"
-        92 => "G#6"
-        93 => "A6"
-        94 => "A#6"
-        95 => "B6"
-        
-        // Octave 7 (96-107)
-        96 => "C7"
-        97 => "C#7"
-        98 => "D7"
-        99 => "D#7"
-        100 => "E7"
-        101 => "F7"
-        102 => "F#7"
-        103 => "G7"
-        104 => "G#7"
-        105 => "A7"
-        106 => "A#7"
-        107 => "B7"
-        
-        // Octave 8 (108-119)
-        108 => "C8"
-        109 => "C#8"
-        110 => "D8"
-        111 => "D#8"
-        112 => "E8"
-        113 => "F8"
-        114 => "F#8"
-        115 => "G8"
-        116 => "G#8"
-        117 => "A8"
-        118 => "A#8"
-        119 => "B8"
-        
-        // Octave 9 (120-127)
-        120 => "C9"
-        121 => "C#9"
-        122 => "D9"
-        123 => "D#9"
-        124 => "E9"
-        125 => "F9"
-        126 => "F#9"
-        127 => "G9"
-        
-        _ => "Unknown"
-    }
+///|
+pub fn note_to_pitch(note : Byte) -> String {
+  match note {
+    // Octave -1 (0-11)
+    0 => "C-1"
+    1 => "C#-1"
+    2 => "D-1"
+    3 => "D#-1"
+    4 => "E-1"
+    5 => "F-1"
+    6 => "F#-1"
+    7 => "G-1"
+    8 => "G#-1"
+    9 => "A-1"
+    10 => "A#-1"
+    11 => "B-1"
+
+    // Octave 0 (12-23)
+    12 => "C0"
+    13 => "C#0"
+    14 => "D0"
+    15 => "D#0"
+    16 => "E0"
+    17 => "F0"
+    18 => "F#0"
+    19 => "G0"
+    20 => "G#0"
+    21 => "A0"
+    22 => "A#0"
+    23 => "B0"
+
+    // Octave 1 (24-35)
+    24 => "C1"
+    25 => "C#1"
+    26 => "D1"
+    27 => "D#1"
+    28 => "E1"
+    29 => "F1"
+    30 => "F#1"
+    31 => "G1"
+    32 => "G#1"
+    33 => "A1"
+    34 => "A#1"
+    35 => "B1"
+
+    // Octave 2 (36-47)
+    36 => "C2"
+    37 => "C#2"
+    38 => "D2"
+    39 => "D#2"
+    40 => "E2"
+    41 => "F2"
+    42 => "F#2"
+    43 => "G2"
+    44 => "G#2"
+    45 => "A2"
+    46 => "A#2"
+    47 => "B2"
+
+    // Octave 3 (48-59)
+    48 => "C3"
+    49 => "C#3"
+    50 => "D3"
+    51 => "D#3"
+    52 => "E3"
+    53 => "F3"
+    54 => "F#3"
+    55 => "G3"
+    56 => "G#3"
+    57 => "A3"
+    58 => "A#3"
+    59 => "B3"
+
+    // Octave 4 (60-71) - Middle C is C4
+    60 => "C4"
+    61 => "C#4"
+    62 => "D4"
+    63 => "D#4"
+    64 => "E4"
+    65 => "F4"
+    66 => "F#4"
+    67 => "G4"
+    68 => "G#4"
+    69 => "A4"
+    70 => "A#4"
+    71 => "B4"
+
+    // Octave 5 (72-83)
+    72 => "C5"
+    73 => "C#5"
+    74 => "D5"
+    75 => "D#5"
+    76 => "E5"
+    77 => "F5"
+    78 => "F#5"
+    79 => "G5"
+    80 => "G#5"
+    81 => "A5"
+    82 => "A#5"
+    83 => "B5"
+
+    // Octave 6 (84-95)
+    84 => "C6"
+    85 => "C#6"
+    86 => "D6"
+    87 => "D#6"
+    88 => "E6"
+    89 => "F6"
+    90 => "F#6"
+    91 => "G6"
+    92 => "G#6"
+    93 => "A6"
+    94 => "A#6"
+    95 => "B6"
+
+    // Octave 7 (96-107)
+    96 => "C7"
+    97 => "C#7"
+    98 => "D7"
+    99 => "D#7"
+    100 => "E7"
+    101 => "F7"
+    102 => "F#7"
+    103 => "G7"
+    104 => "G#7"
+    105 => "A7"
+    106 => "A#7"
+    107 => "B7"
+
+    // Octave 8 (108-119)
+    108 => "C8"
+    109 => "C#8"
+    110 => "D8"
+    111 => "D#8"
+    112 => "E8"
+    113 => "F8"
+    114 => "F#8"
+    115 => "G8"
+    116 => "G#8"
+    117 => "A8"
+    118 => "A#8"
+    119 => "B8"
+
+    // Octave 9 (120-127)
+    120 => "C9"
+    121 => "C#9"
+    122 => "D9"
+    123 => "D#9"
+    124 => "E9"
+    125 => "F9"
+    126 => "F#9"
+    127 => "G9"
+    _ => "Unknown"
+  }
 }
 
-pub fn microseconds_to_bpm(microseconds: UInt) -> Double {
-    60000000.0 / microseconds.to_double()
+///|
+pub fn microseconds_to_bpm(microseconds : UInt) -> Double {
+  60000000.0 / microseconds.to_double()
 }

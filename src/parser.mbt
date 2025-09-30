@@ -196,15 +196,15 @@ fn parse_event(state : ParserState) -> Event raise ParseError {
           let meta_type = read_byte(state)
           let length = read_variable_int(state)
           let data = read_bytes(state, length.reinterpret_as_int())
-          match meta_type{
+          match meta_type {
             0x51 => {
               // Tempo: 3 bytes of microseconds per quarter note
               if data.length() != 3 {
                 raise InvalidData("Tempo data must be 3 bytes")
               }
-              let microseconds : UInt = (data[0].to_uint() << 16) | 
-                                (data[1].to_uint() << 8) | 
-                                data[2].to_uint()
+              let microseconds : UInt = (data[0].to_uint() << 16) |
+                (data[1].to_uint() << 8) |
+                data[2].to_uint()
               Tempo(delta~, microseconds~)
             }
             0x58 => {
@@ -236,7 +236,6 @@ fn parse_event(state : ParserState) -> Event raise ParseError {
             }
             _ => Meta(delta~, meta_type~, data~)
           }
-          
         }
         _ => raise UnknownEventType
       }

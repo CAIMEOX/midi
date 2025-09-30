@@ -2,7 +2,13 @@
 package "CAIMEOX/midi"
 
 // Values
+fn microseconds_to_bpm(UInt) -> Double
+
+fn note_to_pitch(Byte) -> String
+
 fn parse(Bytes) -> MidiFile raise ParseError
+
+fn program_to_instrument(Byte) -> String
 
 fn serialize(MidiFile) -> Bytes
 
@@ -24,6 +30,9 @@ pub(all) enum Event {
   Aftertouch(delta~ : UInt, channel~ : Byte, value~ : Byte)
   PolyTouch(delta~ : UInt, channel~ : Byte, note~ : Byte, value~ : Byte)
   PitchWheel(delta~ : UInt, channel~ : Byte, pitch~ : Int)
+  Tempo(delta~ : UInt, microseconds~ : UInt)
+  TimeSignature(delta~ : UInt, numerator~ : Byte, denominator~ : Byte, clocks_per_beat~ : Byte, thirty_seconds_per_quarter~ : Byte)
+  KeySignature(delta~ : UInt, sf~ : Byte, mi~ : Byte)
   Meta(delta~ : UInt, meta_type~ : Byte, data~ : Array[Byte])
   SysEx(delta~ : UInt, data~ : Array[Byte])
   Clock(delta~ : UInt)

@@ -4,14 +4,16 @@ pub(all) struct MidiFile {
   format : UInt16
   division : UInt16
   tracks : Array[Track]
-} 
+}
 
+///|
 pub impl Show for MidiFile with to_string(self) -> String {
   let track_strs = self.tracks.map(fn(t) { t.to_string() })
   let tracks_info = track_strs.join("\n------\n")
   "format=\{self.format}\ndivision=\{self.division}\ntracks:\{self.tracks.length()}\n\{tracks_info}"
 }
 
+///|
 pub impl Show for MidiFile with output(self, logger) -> Unit {
   logger.write_string(self.to_string())
 }
@@ -48,9 +50,15 @@ pub(all) enum Event {
   Aftertouch(delta~ : UInt, channel~ : Byte, value~ : Byte)
   PolyTouch(delta~ : UInt, channel~ : Byte, note~ : Byte, value~ : Byte)
   PitchWheel(delta~ : UInt, channel~ : Byte, pitch~ : Int)
-  Tempo(delta~ : UInt, microseconds~ : UInt)  // 0x51
-  TimeSignature(delta~ : UInt, numerator~ : Byte, denominator~ : Byte, clocks_per_beat~ : Byte, thirty_seconds_per_quarter~ : Byte)  // 0x58
-  KeySignature(delta~ : UInt, sf~ : Byte, mi~ : Byte)  // 0x59
+  Tempo(delta~ : UInt, microseconds~ : UInt) // 0x51
+  TimeSignature(
+    delta~ : UInt,
+    numerator~ : Byte,
+    denominator~ : Byte,
+    clocks_per_beat~ : Byte,
+    thirty_seconds_per_quarter~ : Byte
+  ) // 0x58
+  KeySignature(delta~ : UInt, sf~ : Byte, mi~ : Byte) // 0x59
   Meta(delta~ : UInt, meta_type~ : Byte, data~ : Array[Byte])
   SysEx(delta~ : UInt, data~ : Array[Byte])
   Clock(delta~ : UInt)
@@ -80,7 +88,13 @@ impl Show for Event with to_string(self) -> String {
       "PitchWheel[\{delta}][ch \{channel.to_int()}] pitch=\{pitch}"
     Tempo(delta~, microseconds~) =>
       "Tempo[\{delta}] microseconds=\{microseconds} (\{microseconds_to_bpm(microseconds)} BPM)"
-    TimeSignature(delta~, numerator~, denominator~, clocks_per_beat~, thirty_seconds_per_quarter~) =>
+    TimeSignature(
+      delta~,
+      numerator~,
+      denominator~,
+      clocks_per_beat~,
+      thirty_seconds_per_quarter~
+    ) =>
       "TimeSignature[\{delta}] numerator=\{numerator.to_int()} denominator=\{denominator.to_int()} clocks_per_tick=\{clocks_per_beat.to_int()} thirty_seconds_per_quarter=\{thirty_seconds_per_quarter.to_int()}"
     KeySignature(delta~, sf~, mi~) =>
       "KeySignature[\{delta}] sharp_flat=\{sf.to_int()} mi=\{mi.to_int()}"
@@ -105,4 +119,3 @@ impl Show for Event with to_string(self) -> String {
 impl Show for Event with output(self, logger) -> Unit {
   logger.write_string(self.to_string())
 }
-
