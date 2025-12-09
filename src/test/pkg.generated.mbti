@@ -2,7 +2,7 @@
 package "CAIMEOX/midi/test"
 
 // Values
-let resource : Bytes
+pub let resource : Bytes
 
 // Errors
 
