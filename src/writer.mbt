@@ -147,7 +147,7 @@ fn serialize_event(
       write_byte(state, ((adjusted_pitch >> 7) & 0x7F).to_byte()) // MSB
       status.to_byte()
     }
-    Tempo(delta~, microseconds~) => {
+    Tempo(microseconds~, ..) => {
       write_byte(state, b'\xFF')
       write_byte(state, b'\x51')
       write_byte(state, b'\x03')
@@ -156,16 +156,10 @@ fn serialize_event(
       write_byte(state, (microseconds & 0xFF).to_byte())
       b'\xFF'
     }
-    TimeSignature(
-      delta~,
-      numerator~,
-      denominator~,
-      clocks_per_beat~,
-      thirty_seconds_per_quarter~
-    ) =>
+    TimeSignature(..) =>
       // TODO
       b'\xFF'
-    KeySignature(delta~, sf~, mi~) =>
+    KeySignature(..) =>
       // TODO
       b'\xFF'
     SysEx(data~, ..) => {

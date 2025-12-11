@@ -2,15 +2,15 @@
 package "CAIMEOX/midi"
 
 // Values
-fn microseconds_to_bpm(UInt) -> Double
+pub fn microseconds_to_bpm(UInt) -> Double
 
-fn note_to_pitch(Byte) -> String
+pub fn note_to_pitch(Byte) -> String
 
-fn parse(Bytes) -> MidiFile raise ParseError
+pub fn parse(Bytes) -> MidiFile raise ParseError
 
-fn program_to_instrument(Byte) -> String
+pub fn program_to_instrument(Byte) -> String
 
-fn serialize(MidiFile) -> Bytes
+pub fn serialize(MidiFile) -> Bytes
 
 // Errors
 pub suberror ParseError {
@@ -48,7 +48,7 @@ pub(all) struct MidiFile {
   division : UInt16
   tracks : Array[Track]
 }
-impl Show for MidiFile
+pub impl Show for MidiFile
 
 pub(all) struct Track {
   events : Array[Event]
